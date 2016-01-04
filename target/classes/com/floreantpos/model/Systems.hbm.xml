@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false" package="com.floreantpos.model">
+  <class lazy="false" name="Systems" table="SYSTEM">
+    <id column="ID" name="id" type="java.lang.Integer">
+      <generator class="assigned"/>
+    </id>
+    <property column="DEVICEIP" length="40" name="deviceip" type="string"/>
+    <property column="GATEWAY" length="20" name="gateway" type="string"/>
+    <property column="SERVERIP" length="20" name="serverip" type="string"/>
+    <property column="STORAGE" length="20" name="storage" type="string"/>
+    <property column="MERCHANTNAME" length="20" name="merchantname" type="string"/>
+    <property column="MERCHANTTYPE" length="20" name="merchanttype" type="string"/>
+    <property column="ADDRESS" length="20" name="address" type="string"/>
+    <property column="AREA" length="20" name="area" type="string"/>
+    <property column="MERCHANTID" length="20" name="merchantid" type="string"/>
+    <property column="DEVICEID" length="20" name="deviceid" type="string"/>
+    <property column="NAMEUSER" length="20" name="nameuser" type="string"/>
+    <property column="EMAIL" length="60" name="email" type="string"/>
+    <property column="CELLNUMBER" length="20" name="cellnumber" type="java.lang.Integer"/>
+    <property column="USERNAME" length="20" name="username" type="string"/>
+    <property column="PASSWORD" length="20" name="password" type="string"/>
+    <property column="BANNER" length="20" name="banner" type="string"/>
+    <property column="WIFI" length="20" name="wifi" type="string"/>
+    <property column="ETHERNET" length="20" name="ethernet" type="string"/>
+    <property column="CELULLAR1" length="20" name="celullar1" type="string"/>
+    <property column="BRAND1" length="20" name="brand1" type="string"/>
+    <property column="CELULLAR2" length="20" name="celullar2" type="string"/>
+    <property column="BRAND2" length="20" name="brand2" type="string"/>
+    <property column="BLUETOOTH" length="20" name="bluetooth" type="string"/>
+    
+  </class>
+</hibernate-mapping>

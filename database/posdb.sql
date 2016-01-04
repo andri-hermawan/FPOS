@@ -1,0 +1,2442 @@
+-- phpMyAdmin SQL Dump
+-- version 4.2.12deb2
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Aug 21, 2015 at 02:56 PM
+-- Server version: 5.6.25-0ubuntu0.15.04.1
+-- PHP Version: 5.6.4-4ubuntu6.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `posdb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ACTION_HISTORY`
+--
+
+CREATE TABLE IF NOT EXISTS `ACTION_HISTORY` (
+`ID` int(11) NOT NULL,
+  `ACTION_TIME` datetime DEFAULT NULL,
+  `ACTION_NAME` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `USER_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ACTION_HISTORY`
+--
+
+INSERT INTO `ACTION_HISTORY` (`ID`, `ACTION_TIME`, `ACTION_NAME`, `DESCRIPTION`, `USER_ID`) VALUES
+(1, '2015-07-23 09:31:29', 'NEW CHECK', 'CHK#:1', 1),
+(2, '2015-07-23 09:31:31', 'SETTLE CHECK', 'CHK#:1;TOTAL_HRG:6.36', 1),
+(3, '2015-07-23 09:31:39', 'SETTLE CHECK', 'CHK#:1;TOTAL_HRG:6.36', 1),
+(4, '2015-07-23 16:16:45', 'NEW CHECK', 'CHK#:2', 1),
+(5, '2015-07-23 16:16:48', 'SETTLE CHECK', 'CHK#:2;TOTAL_HRG:4.24', 1),
+(6, '2015-08-12 13:07:03', 'NEW CHECK', 'CHK#:3', 1),
+(7, '2015-08-18 10:14:31', 'NEW CHECK', 'CHK#:4', 1),
+(8, '2015-08-18 10:14:57', 'PRINT RECRIPT', 'CHK#:4', 1),
+(9, '2015-08-18 10:15:18', 'PRINT RECRIPT', 'CHK#:4', 1),
+(10, '2015-08-18 11:43:12', 'PRINT RECRIPT', 'CHK#:4', 1),
+(11, '2015-08-18 11:43:52', 'PRINT RECRIPT', 'CHK#:4', 1),
+(12, '2015-08-18 12:43:48', 'SETTLE CHECK', 'CHK#:4;TOTAL_HRG:15,900.00', 1),
+(13, '2015-08-18 12:43:56', 'SETTLE CHECK', 'CHK#:4;TOTAL_HRG:15,900.00', 1),
+(14, '2015-08-18 12:44:18', 'EDIT CHECK', 'CHK#:3', 1),
+(15, '2015-08-18 12:44:20', 'SETTLE CHECK', 'CHK#:3;TOTAL_HRG:14,840.00', 1),
+(16, '2015-08-18 13:10:45', 'NEW CHECK', 'CHK#:5', 1),
+(17, '2015-08-18 13:15:48', 'SPLIT CHECK', 'CHK#:5', 1),
+(18, '2015-08-18 13:17:16', 'VOID CHECK', 'CHK#:5; Total: 32,380.00', 1),
+(19, '2015-08-18 13:17:31', 'NEW CHECK', 'CHK#:6', 1),
+(20, '2015-08-18 13:18:08', 'VOID CHECK', 'CHK#:6; Total: 19,080.00', 1),
+(21, '2015-08-18 13:18:56', 'NEW CHECK', 'CHK#:7', 1),
+(22, '2015-08-18 13:19:25', 'REOPEN CHECK', 'CHK#:6', 1),
+(23, '2015-08-18 13:21:10', 'SETTLE CHECK', 'CHK#:6;TOTAL_HRG:19,080.00', 1),
+(24, '2015-08-18 13:21:10', 'SETTLE CHECK', 'CHK#:7;TOTAL_HRG:29,680.00', 1),
+(25, '2015-08-18 13:22:37', 'NEW CHECK', 'CHK#:8', 1),
+(26, '2015-08-18 13:22:59', 'PAY OUT', 'TOTAL:50,000.00', 1),
+(27, '2015-08-18 13:23:14', 'PAY OUT', 'TOTAL:50,000.00', 1),
+(28, '2015-08-18 13:49:28', 'SETTLE CHECK', 'CHK#:8;TOTAL_HRG:1,060.00', 1),
+(29, '2015-08-18 13:49:46', 'NEW CHECK', 'CHK#:9', 1),
+(30, '2015-08-18 13:52:53', 'SETTLE CHECK', 'CHK#:9;TOTAL_HRG:18,000.00', 1),
+(31, '2015-08-18 13:53:11', 'NEW CHECK', 'CHK#:10', 1),
+(32, '2015-08-18 14:07:57', 'SETTLE CHECK', 'CHK#:10;TOTAL_HRG:1,060.00', 1),
+(33, '2015-08-18 14:08:21', 'SETTLE CHECK', 'CHK#:10;TOTAL_HRG:1,060.00', 1),
+(34, '2015-08-18 14:09:05', 'SETTLE CHECK', 'CHK#:10;TOTAL_HRG:1,060.00', 1),
+(35, '2015-08-18 14:09:09', 'SETTLE CHECK', 'CHK#:10;TOTAL_HRG:1,060.00', 1),
+(36, '2015-08-18 14:09:43', 'SETTLE CHECK', 'CHK#:10;TOTAL_HRG:1,060.00', 1),
+(37, '2015-08-18 14:11:48', 'SETTLE CHECK', 'CHK#:10;TOTAL_HRG:1,060.00', 1),
+(38, '2015-08-18 14:12:02', 'NEW CHECK', 'CHK#:11', 1),
+(39, '2015-08-18 14:12:40', 'SETTLE CHECK', 'CHK#:11;TOTAL_HRG:14,840.00', 1),
+(40, '2015-08-18 14:19:08', 'NEW CHECK', 'CHK#:12', 1),
+(41, '2015-08-18 14:23:11', 'SETTLE CHECK', 'CHK#:12;TOTAL_HRG:9,540.00', 1),
+(42, '2015-08-18 14:23:57', 'SETTLE CHECK', 'CHK#:12;TOTAL_HRG:9,540.00', 1),
+(43, '2015-08-18 14:24:17', 'NEW CHECK', 'CHK#:13', 1),
+(44, '2015-08-18 14:28:41', 'EDIT CHECK', '帳單#:13', 1),
+(45, '2015-08-18 14:30:26', 'NEW CHECK', '帳單#:14', 1),
+(46, '2015-08-18 14:31:41', 'SETTLE CHECK', 'CHK#:14;TOTAL_HRG:19,080.00', 1),
+(47, '2015-08-18 14:32:10', 'SETTLE CHECK', 'CHK#:11;TOTAL_HRG:14,840.00', 1),
+(48, '2015-08-18 14:33:33', 'SETTLE CHECK', 'CHK#:13;TOTAL_HRG:21,200.00', 1),
+(49, '2015-08-18 14:35:18', 'SETTLE CHECK', 'CHK#:13;TOTAL_HRG:21,200.00', 1),
+(50, '2015-08-18 14:36:31', 'NEW CHECK', 'CHK#:15', 1),
+(51, '2015-08-18 14:38:20', 'SETTLE CHECK', 'CHK#:15;TOTAL_HRG:1,060.00', 1),
+(52, '2015-08-18 14:38:43', 'NEW CHECK', 'CHK#:16', 1),
+(53, '2015-08-18 14:39:22', 'SETTLE CHECK', 'CHK#:16;TOTAL_HRG:14,840.00', 1),
+(54, '2015-08-18 14:39:42', 'NEW CHECK', 'CHK#:17', 1),
+(55, '2015-08-18 14:40:13', 'SETTLE CHECK', 'CHK#:17;TOTAL_HRG:19,080.00', 1),
+(56, '2015-08-18 14:40:55', 'NEW CHECK', 'CHK#:18', 1),
+(57, '2015-08-18 14:41:47', 'SETTLE CHECK', 'CHK#:18;TOTAL_HRG:14,840.00', 1),
+(58, '2015-08-18 14:42:52', 'NEW CHECK', 'CHK#:19', 1),
+(59, '2015-08-18 14:43:01', 'SETTLE CHECK', 'CHK#:19;TOTAL_HRG:1,060.00', 1),
+(60, '2015-08-18 14:44:39', 'NEW CHECK', 'CHK#:20', 1),
+(61, '2015-08-18 14:45:02', 'SETTLE CHECK', 'CHK#:20;TOTAL_HRG:8,480.00', 1),
+(62, '2015-08-18 15:15:35', 'NEW CHECK', 'CHK#:21', 1),
+(63, '2015-08-18 15:16:46', 'SETTLE CHECK', 'CHK#:21;TOTAL_HRG:19,080.00', 1),
+(64, '2015-08-18 15:17:40', 'NEW CHECK', 'CHK#:22', 1),
+(65, '2015-08-18 15:22:55', 'NEW CHECK', 'CHK#:23', 1),
+(66, '2015-08-18 15:23:01', 'SETTLE CHECK', 'CHK#:23;TOTAL_HRG:19,080.00', 1),
+(67, '2015-08-18 15:23:17', 'SETTLE CHECK', 'CHK#:22;TOTAL_HRG:29,680.00', 1),
+(68, '2015-08-18 15:23:29', 'NEW CHECK', 'CHK#:24', 1),
+(69, '2015-08-18 15:23:43', 'SETTLE CHECK', 'CHK#:24;TOTAL_HRG:2,650.00', 1),
+(70, '2015-08-18 15:29:54', 'NEW CHECK', 'CHK#:25', 1),
+(71, '2015-08-18 15:29:58', 'SETTLE CHECK', 'CHK#:25;TOTAL_HRG:14,840.00', 1),
+(72, '2015-08-18 15:30:19', 'NEW CHECK', 'CHK#:26', 1),
+(73, '2015-08-18 15:30:26', 'SETTLE CHECK', 'CHK#:26;TOTAL_HRG:19,080.00', 1),
+(74, '2015-08-18 15:30:43', 'NEW CHECK', 'CHK#:27', 1),
+(75, '2015-08-18 15:30:56', 'SETTLE CHECK', 'CHK#:27;TOTAL_HRG:14,840.00', 1),
+(76, '2015-08-18 15:31:39', 'NEW CHECK', 'CHK#:28', 1),
+(77, '2015-08-18 15:31:43', 'SETTLE CHECK', 'CHK#:28;TOTAL_HRG:1,060.00', 1),
+(78, '2015-08-18 15:32:41', 'NEW CHECK', 'CHK#:29', 1),
+(79, '2015-08-18 16:02:23', 'SETTLE CHECK', 'CHK#:29;TOTAL_HRG:2,120.00', 1),
+(80, '2015-08-18 16:06:48', 'NEW CHECK', 'CHK#:30', 1),
+(81, '2015-08-18 16:15:53', 'SETTLE CHECK', 'CHK#:30;TOTAL_HRG:14,840.00', 1),
+(82, '2015-08-18 16:17:44', 'NEW CHECK', 'CHK#:31', 1),
+(83, '2015-08-18 16:17:46', 'SETTLE CHECK', 'CHK#:31;TOTAL_HRG:5,300.00', 1),
+(84, '2015-08-18 16:18:51', 'NEW CHECK', 'CHK#:32', 1),
+(85, '2015-08-18 16:19:41', 'SETTLE CHECK', 'CHK#:32;TOTAL_HRG:2,120.00', 1),
+(86, '2015-08-18 16:21:54', 'NEW CHECK', 'CHK#:33', 1),
+(87, '2015-08-21 13:11:58', 'SETTLE CHECK', 'CHK#: :33;Total:14,840.00', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ATTENDENCE_HISTORY`
+--
+
+CREATE TABLE IF NOT EXISTS `ATTENDENCE_HISTORY` (
+`ID` int(11) NOT NULL,
+  `CLOCK_IN_TIME` datetime DEFAULT NULL,
+  `CLOCK_OUT_TIME` datetime DEFAULT NULL,
+  `CLOCK_IN_HOUR` smallint(6) DEFAULT NULL,
+  `CLOCK_OUT_HOUR` smallint(6) DEFAULT NULL,
+  `CLOCKED_OUT` bit(1) DEFAULT NULL,
+  `USER_ID` int(11) DEFAULT NULL,
+  `SHIFT_ID` int(11) DEFAULT NULL,
+  `TERMINAL_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ATTENDENCE_HISTORY`
+--
+
+INSERT INTO `ATTENDENCE_HISTORY` (`ID`, `CLOCK_IN_TIME`, `CLOCK_OUT_TIME`, `CLOCK_IN_HOUR`, `CLOCK_OUT_HOUR`, `CLOCKED_OUT`, `USER_ID`, `SHIFT_ID`, `TERMINAL_ID`) VALUES
+(1, '2013-03-22 00:25:32', '2015-07-22 10:26:29', 0, 10, b'1', 1, 1, 3838),
+(2, '2015-07-22 10:26:29', '2015-07-22 11:00:18', 10, 11, b'1', 1, 1, 0),
+(3, '2015-07-22 11:00:18', '2015-07-22 12:00:18', 11, 0, b'1', 1, 1, 0),
+(4, '2015-07-22 12:00:18', '2015-07-23 14:59:56', 0, 2, b'1', 1, 1, 0),
+(5, '2015-07-23 14:59:56', '2015-07-23 15:00:53', 2, 3, b'1', 1, 1, 0),
+(6, '2015-07-23 15:00:53', '2015-07-23 17:00:24', 3, 5, b'1', 1, 1, 0),
+(7, '2015-07-23 17:00:24', '2015-07-28 14:29:44', 5, 2, b'1', 1, 1, 0),
+(8, '2015-07-28 14:29:44', '2015-07-29 10:00:37', 2, 10, b'1', 1, 1, 0),
+(9, '2015-07-29 10:00:37', '2015-07-29 11:00:49', 10, 11, b'1', 1, 1, 0),
+(10, '2015-07-29 11:00:49', '2015-07-29 12:00:37', 11, 0, b'1', 1, 1, 0),
+(11, '2015-07-29 12:00:37', '2015-07-30 11:00:15', 0, 11, b'1', 1, 1, 0),
+(12, '2015-07-30 11:00:15', '2015-07-30 12:00:15', 11, 0, b'1', 1, 1, 0),
+(13, '2015-07-30 12:00:15', '2015-07-30 13:00:15', 0, 1, b'1', 1, 1, 0),
+(14, '2015-07-30 13:00:15', '2015-07-30 14:00:15', 1, 2, b'1', 1, 1, 0),
+(15, '2015-07-30 14:00:15', '2015-07-30 15:00:15', 2, 3, b'1', 1, 1, 0),
+(16, '2015-07-30 15:00:15', '2015-07-30 16:00:15', 3, 4, b'1', 1, 1, 0),
+(17, '2015-07-30 16:00:15', '2015-07-30 17:00:15', 4, 5, b'1', 1, 1, 0),
+(18, '2015-07-30 17:00:15', '2015-08-12 11:54:44', 5, 11, b'1', 1, 1, 0),
+(19, '2015-08-12 11:54:44', '2015-08-12 13:00:40', 11, 1, b'1', 1, 1, 0),
+(20, '2015-08-12 13:00:40', '2015-08-18 10:13:52', 1, 10, b'1', 1, 1, 0),
+(21, '2015-08-18 10:13:52', '2015-08-18 11:00:03', 10, 11, b'1', 1, 1, 0),
+(22, '2015-08-18 11:00:03', '2015-08-18 13:00:19', 11, 1, b'1', 1, 1, 0),
+(23, '2015-08-18 13:00:19', '2015-08-18 15:00:10', 1, 3, b'1', 1, 1, 0),
+(24, '2015-08-18 15:00:10', '2015-08-18 16:00:25', 3, 4, b'1', 1, 1, 0),
+(25, '2015-08-18 16:00:25', '2015-08-20 16:22:38', 4, 4, b'1', 1, 1, 0),
+(26, '2015-08-20 16:22:38', '2015-08-21 13:36:05', 4, 1, b'1', 1, 1, 0),
+(27, '2015-08-21 13:01:31', NULL, 1, NULL, b'0', 2, 1, 1248),
+(28, '2015-08-21 14:01:00', NULL, 2, NULL, b'0', 1, 1, 577);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `CASH_DRAWER_RESET_HISTORY`
+--
+
+CREATE TABLE IF NOT EXISTS `CASH_DRAWER_RESET_HISTORY` (
+`ID` int(11) NOT NULL,
+  `RESET_TIME` datetime DEFAULT NULL,
+  `USER_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `CASH_DRAWER_RESET_HISTORY`
+--
+
+INSERT INTO `CASH_DRAWER_RESET_HISTORY` (`ID`, `RESET_TIME`, `USER_ID`) VALUES
+(1, '2015-07-22 11:00:19', NULL),
+(2, '2015-07-22 12:00:18', NULL),
+(3, '2015-07-23 15:00:53', NULL),
+(4, '2015-07-23 17:00:24', NULL),
+(5, '2015-07-29 10:00:37', NULL),
+(6, '2015-07-29 11:00:49', NULL),
+(7, '2015-07-29 12:00:37', NULL),
+(8, '2015-07-30 11:00:15', NULL),
+(9, '2015-07-30 12:00:15', NULL),
+(10, '2015-07-30 13:00:15', NULL),
+(11, '2015-07-30 14:00:15', NULL),
+(12, '2015-07-30 15:00:15', NULL),
+(13, '2015-07-30 16:00:15', NULL),
+(14, '2015-07-30 17:00:15', NULL),
+(15, '2015-08-12 13:00:40', NULL),
+(16, '2015-08-18 11:00:03', NULL),
+(17, '2015-08-18 13:00:19', NULL),
+(18, '2015-08-18 15:00:10', NULL),
+(19, '2015-08-18 16:00:25', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `COOKING_INSTRUCTION`
+--
+
+CREATE TABLE IF NOT EXISTS `COOKING_INSTRUCTION` (
+`ID` int(11) NOT NULL,
+  `DESCRIPTION` varchar(60) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `COOKING_INSTRUCTION`
+--
+
+INSERT INTO `COOKING_INSTRUCTION` (`ID`, `DESCRIPTION`) VALUES
+(1, 'jangan pedas');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `COUPON_AND_DISCOUNT`
+--
+
+CREATE TABLE IF NOT EXISTS `COUPON_AND_DISCOUNT` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(30) DEFAULT NULL,
+  `TYPE` int(11) DEFAULT NULL,
+  `VALUE` double DEFAULT NULL,
+  `EXPIRY_DATE` datetime DEFAULT NULL,
+  `DISABLED` bit(1) DEFAULT NULL,
+  `NEVER_EXPIRE` bit(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `CUSTOMER`
+--
+
+CREATE TABLE IF NOT EXISTS `CUSTOMER` (
+`AUTO_ID` int(11) NOT NULL,
+  `LOYALTY_NO` varchar(30) DEFAULT NULL,
+  `TELEPHONE_NO` varchar(30) DEFAULT NULL,
+  `EMAIL` varchar(40) DEFAULT NULL,
+  `NAME` varchar(60) DEFAULT NULL,
+  `DOB` varchar(16) DEFAULT NULL,
+  `SSN` varchar(30) DEFAULT NULL,
+  `ADDRESS` varchar(120) DEFAULT NULL,
+  `CITY` varchar(30) DEFAULT NULL,
+  `STATE` varchar(30) DEFAULT NULL,
+  `ZIP_CODE` varchar(10) DEFAULT NULL,
+  `COUNTRY` varchar(30) DEFAULT NULL,
+  `VIP` bit(1) DEFAULT NULL,
+  `CREDIT_LIMIT` double DEFAULT NULL,
+  `CREDIT_SPENT` double DEFAULT NULL,
+  `CREDIT_CARD_NO` varchar(30) DEFAULT NULL,
+  `NOTE` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `CUSTOMER_PROPERTIES`
+--
+
+CREATE TABLE IF NOT EXISTS `CUSTOMER_PROPERTIES` (
+  `id` int(11) NOT NULL,
+  `property_value` varchar(255) DEFAULT NULL,
+  `property_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `DRAWER_PULL_REPORT`
+--
+
+CREATE TABLE IF NOT EXISTS `DRAWER_PULL_REPORT` (
+`ID` int(11) NOT NULL,
+  `REPORT_TIME` datetime DEFAULT NULL,
+  `REG` varchar(15) DEFAULT NULL,
+  `TICKET_COUNT` int(11) DEFAULT NULL,
+  `BEGIN_CASH` double DEFAULT NULL,
+  `NET_SALES` double DEFAULT NULL,
+  `SALES_TAX` double DEFAULT NULL,
+  `CASH_TAX` double DEFAULT NULL,
+  `TOTAL_REVENUE` double DEFAULT NULL,
+  `GROSS_RECEIPTS` double DEFAULT NULL,
+  `GIFTCERTRETURNCOUNT` int(11) DEFAULT NULL,
+  `GIFTCERTRETURNAMOUNT` double DEFAULT NULL,
+  `GIFTCERTCHANGEAMOUNT` double DEFAULT NULL,
+  `CASH_RECEIPT_NO` int(11) DEFAULT NULL,
+  `CASH_RECEIPT_AMOUNT` double DEFAULT NULL,
+  `CREDIT_CARD_RECEIPT_NO` int(11) DEFAULT NULL,
+  `CREDIT_CARD_RECEIPT_AMOUNT` double DEFAULT NULL,
+  `DEBIT_CARD_RECEIPT_NO` int(11) DEFAULT NULL,
+  `DEBIT_CARD_RECEIPT_AMOUNT` double DEFAULT NULL,
+  `RECEIPT_DIFFERENTIAL` double DEFAULT NULL,
+  `CASH_BACK` double DEFAULT NULL,
+  `CASH_TIPS` double DEFAULT NULL,
+  `CHARGED_TIPS` double DEFAULT NULL,
+  `TIPS_PAID` double DEFAULT NULL,
+  `TIPS_DIFFERENTIAL` double DEFAULT NULL,
+  `PAY_OUT_NO` int(11) DEFAULT NULL,
+  `PAY_OUT_AMOUNT` double DEFAULT NULL,
+  `DRAWER_BLEED_NO` int(11) DEFAULT NULL,
+  `DRAWER_BLEED_AMOUNT` double DEFAULT NULL,
+  `DRAWER_ACCOUNTABLE` double DEFAULT NULL,
+  `CASH_TO_DEPOSIT` double DEFAULT NULL,
+  `VARIANCE` double DEFAULT NULL,
+  `totalVoidWst` double DEFAULT NULL,
+  `totalVoid` double DEFAULT NULL,
+  `totalDiscountCount` int(11) DEFAULT NULL,
+  `totalDiscountAmount` double DEFAULT NULL,
+  `totalDiscountSales` double DEFAULT NULL,
+  `totalDiscountGuest` int(11) DEFAULT NULL,
+  `totalDiscountPartySize` int(11) DEFAULT NULL,
+  `totalDiscountCheckSize` int(11) DEFAULT NULL,
+  `totalDiscountPercentage` double DEFAULT NULL,
+  `totalDiscountRatio` double DEFAULT NULL,
+  `TERMINAL_ID` int(11) DEFAULT NULL,
+  `REFUND_RECEIPT_COUNT` int(11) DEFAULT NULL,
+  `REFUND_AMOUNT` double DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `DRAWER_PULL_REPORT`
+--
+
+INSERT INTO `DRAWER_PULL_REPORT` (`ID`, `REPORT_TIME`, `REG`, `TICKET_COUNT`, `BEGIN_CASH`, `NET_SALES`, `SALES_TAX`, `CASH_TAX`, `TOTAL_REVENUE`, `GROSS_RECEIPTS`, `GIFTCERTRETURNCOUNT`, `GIFTCERTRETURNAMOUNT`, `GIFTCERTCHANGEAMOUNT`, `CASH_RECEIPT_NO`, `CASH_RECEIPT_AMOUNT`, `CREDIT_CARD_RECEIPT_NO`, `CREDIT_CARD_RECEIPT_AMOUNT`, `DEBIT_CARD_RECEIPT_NO`, `DEBIT_CARD_RECEIPT_AMOUNT`, `RECEIPT_DIFFERENTIAL`, `CASH_BACK`, `CASH_TIPS`, `CHARGED_TIPS`, `TIPS_PAID`, `TIPS_DIFFERENTIAL`, `PAY_OUT_NO`, `PAY_OUT_AMOUNT`, `DRAWER_BLEED_NO`, `DRAWER_BLEED_AMOUNT`, `DRAWER_ACCOUNTABLE`, `CASH_TO_DEPOSIT`, `VARIANCE`, `totalVoidWst`, `totalVoid`, `totalDiscountCount`, `totalDiscountAmount`, `totalDiscountSales`, `totalDiscountGuest`, `totalDiscountPartySize`, `totalDiscountCheckSize`, `totalDiscountPercentage`, `totalDiscountRatio`, `TERMINAL_ID`, `REFUND_RECEIPT_COUNT`, `REFUND_AMOUNT`) VALUES
+(1, '2015-07-22 11:00:18', NULL, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(2, '2015-07-22 12:00:18', NULL, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(3, '2015-07-23 15:00:53', NULL, 1, 500, 6, 0.36000000000000004, 0.36000000000000004, 6.36, 6.36, 0, 0, 0, 2, 12.72, 0, 0, 0, 0, -6.36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 512.72, 512.72, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(4, '2015-07-23 17:00:24', NULL, 1, 500, 4, 0.24, 0.24, 4.24, 4.24, 0, 0, 0, 1, 4.24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 504.24, 504.24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(5, '2015-07-29 10:00:37', NULL, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(6, '2015-07-29 11:00:49', NULL, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(7, '2015-07-29 12:00:37', NULL, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(8, '2015-07-30 11:00:15', NULL, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(9, '2015-07-30 12:00:15', NULL, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(10, '2015-07-30 13:00:15', NULL, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(11, '2015-07-30 14:00:15', NULL, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(12, '2015-07-30 15:00:15', NULL, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(13, '2015-07-30 16:00:15', NULL, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(14, '2015-07-30 17:00:15', NULL, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(15, '2015-08-12 13:00:40', NULL, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(16, '2015-08-18 11:00:03', NULL, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(17, '2015-08-18 13:00:19', NULL, 2, 500, 29000, 1740, 1740, 30740, 30740, 0, 0, 0, 3, 46640, 0, 0, 0, 0, -15900, 0, 0, 0, 0, 0, 0, 0, 0, 0, 47140, 47140, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(18, '2015-08-18 15:00:10', NULL, 15, 500, 183000, 9900, 6540, 192900, 192953, 0, 300, 279.34543999999994, 9, 133543, 5, 55163, 3, 34990, -11683.654559999995, 19080, 0, 53, 0, 53, 2, 100000, 0, 0, 14963, 14680.654559999995, 0, 0, 31000, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL),
+(19, '2015-08-18 16:00:25', NULL, 8, 500, 113500, 6810, 2760, 120310, 120330, 0, 0, 0, 2, 48760, 5, 70510, 1, 1060, 0, 0, 0, 20, 0, 20, 0, 0, 0, 0, 49260, 49260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `DRAWER_PULL_REPORT_VOIDTICKETS`
+--
+
+CREATE TABLE IF NOT EXISTS `DRAWER_PULL_REPORT_VOIDTICKETS` (
+  `DPREPORT_ID` int(11) NOT NULL,
+  `code` int(11) DEFAULT NULL,
+  `reason` varchar(255) DEFAULT NULL,
+  `hast` varchar(255) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `amount` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `GRATUITY`
+--
+
+CREATE TABLE IF NOT EXISTS `GRATUITY` (
+`ID` int(11) NOT NULL,
+  `AMOUNT` double DEFAULT NULL,
+  `PAID` bit(1) DEFAULT NULL,
+  `TICKET_ID` int(11) DEFAULT NULL,
+  `OWNER_ID` int(11) DEFAULT NULL,
+  `TERMINAL_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `GRATUITY`
+--
+
+INSERT INTO `GRATUITY` (`ID`, `AMOUNT`, `PAID`, `TICKET_ID`, `OWNER_ID`, `TERMINAL_ID`) VALUES
+(1, 3, b'0', 13, 1, 0),
+(2, 10, b'0', 17, 1, 0),
+(3, 30, b'0', 18, 1, 0),
+(4, 10, b'0', 20, 1, 0),
+(5, 10, b'0', 26, 1, 0),
+(6, 10, b'0', 27, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `INVENTORY_GROUP`
+--
+
+CREATE TABLE IF NOT EXISTS `INVENTORY_GROUP` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(60) NOT NULL,
+  `VISIBLE` bit(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `INVENTORY_ITEM`
+--
+
+CREATE TABLE IF NOT EXISTS `INVENTORY_ITEM` (
+`ID` int(11) NOT NULL,
+  `CREATE_TIME` datetime DEFAULT NULL,
+  `LAST_UPDATE_DATE` datetime DEFAULT NULL,
+  `NAME` varchar(60) DEFAULT NULL,
+  `PACKAGE_BARCODE` varchar(30) DEFAULT NULL,
+  `UNIT_BARCODE` varchar(30) DEFAULT NULL,
+  `UNIT_PER_PACKAGE` double DEFAULT NULL,
+  `SORT_ORDER` int(11) DEFAULT NULL,
+  `PACKAGE_REORDER_LEVEL` int(11) DEFAULT NULL,
+  `PACKAGE_REPLENISH_LEVEL` int(11) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `AVERAGE_PACKAGE_PRICE` double DEFAULT NULL,
+  `TOTAL_PACKAGES` int(11) DEFAULT NULL,
+  `TOTAL_RECEPIE_UNITS` double DEFAULT NULL,
+  `UNIT_PURCHASE_PRICE` double DEFAULT NULL,
+  `UNIT_SELLING_PRICE` double DEFAULT NULL,
+  `VISIBLE` bit(1) DEFAULT NULL,
+  `PUNIT_ID` int(11) DEFAULT NULL,
+  `ITEM_GROUP_ID` int(11) DEFAULT NULL,
+  `ITEM_LOCATION_ID` int(11) DEFAULT NULL,
+  `ITEM_VENDOR_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `INVENTORY_LOCATION`
+--
+
+CREATE TABLE IF NOT EXISTS `INVENTORY_LOCATION` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(60) NOT NULL,
+  `SORT_ORDER` int(11) DEFAULT NULL,
+  `VISIBLE` bit(1) DEFAULT NULL,
+  `WAREHOUSE_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `INVENTORY_META_CODE`
+--
+
+CREATE TABLE IF NOT EXISTS `INVENTORY_META_CODE` (
+`ID` int(11) NOT NULL,
+  `TYPE` varchar(255) DEFAULT NULL,
+  `CODE_TEXT` varchar(255) DEFAULT NULL,
+  `CODE_NO` int(11) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `INVENTORY_TRANSACTION`
+--
+
+CREATE TABLE IF NOT EXISTS `INVENTORY_TRANSACTION` (
+`ID` int(11) NOT NULL,
+  `TRANSACTION_DATE` datetime DEFAULT NULL,
+  `QUANTITY` int(11) DEFAULT NULL,
+  `UNIT_PRICE` double DEFAULT NULL,
+  `REMARK` varchar(255) DEFAULT NULL,
+  `TRAN_TYPE` int(11) DEFAULT NULL,
+  `REFERENCE_ID` int(11) DEFAULT NULL,
+  `ITEM_ID` int(11) DEFAULT NULL,
+  `VENDOR_ID` int(11) DEFAULT NULL,
+  `FROM_WAREHOUSE_ID` int(11) DEFAULT NULL,
+  `TO_WAREHOUSE_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `INVENTORY_UNIT`
+--
+
+CREATE TABLE IF NOT EXISTS `INVENTORY_UNIT` (
+`ID` int(11) NOT NULL,
+  `SHORT_NAME` varchar(255) DEFAULT NULL,
+  `LONG_NAME` varchar(255) DEFAULT NULL,
+  `ALT_NAME` varchar(255) DEFAULT NULL,
+  `CONV_FACTOR1` varchar(255) DEFAULT NULL,
+  `CONV_FACTOR2` varchar(255) DEFAULT NULL,
+  `CONV_FACTOR3` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `INVENTORY_VENDOR`
+--
+
+CREATE TABLE IF NOT EXISTS `INVENTORY_VENDOR` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(60) NOT NULL,
+  `VISIBLE` bit(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `INVENTORY_WAREHOUSE`
+--
+
+CREATE TABLE IF NOT EXISTS `INVENTORY_WAREHOUSE` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(60) NOT NULL,
+  `VISIBLE` bit(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `KITCHEN_TICKET`
+--
+
+CREATE TABLE IF NOT EXISTS `KITCHEN_TICKET` (
+`ID` int(11) NOT NULL,
+  `TICKET_ID` int(11) DEFAULT NULL,
+  `CREATE_DATE` datetime DEFAULT NULL,
+  `CLOSE_DATE` datetime DEFAULT NULL,
+  `VOIDED` bit(1) DEFAULT NULL,
+  `STATUS` varchar(30) DEFAULT NULL,
+  `SERVER_NAME` varchar(30) DEFAULT NULL,
+  `TICKET_TYPE` varchar(20) DEFAULT NULL,
+  `VPRINTER` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `KITCHEN_TICKET_ITEM`
+--
+
+CREATE TABLE IF NOT EXISTS `KITCHEN_TICKET_ITEM` (
+`ID` int(11) NOT NULL,
+  `MENU_ITEM_CODE` varchar(255) DEFAULT NULL,
+  `MENU_ITEM_NAME` varchar(30) DEFAULT NULL,
+  `QUANTITY` int(11) DEFAULT NULL,
+  `VOIDED` bit(1) DEFAULT NULL,
+  `STATUS` varchar(30) DEFAULT NULL,
+  `KITHEN_TICKET_ID` int(11) DEFAULT NULL,
+  `ITEM_ORDER` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `KIT_TICKET_TABLE_NUM`
+--
+
+CREATE TABLE IF NOT EXISTS `KIT_TICKET_TABLE_NUM` (
+  `kit_ticket_id` int(11) NOT NULL,
+  `TABLE_ID` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `MENUITEM_MODIFIERGROUP`
+--
+
+CREATE TABLE IF NOT EXISTS `MENUITEM_MODIFIERGROUP` (
+`ID` int(11) NOT NULL,
+  `MIN_QUANTITY` int(11) DEFAULT NULL,
+  `MAX_QUANTITY` int(11) DEFAULT NULL,
+  `MODIFIER_GROUP` int(11) DEFAULT NULL,
+  `MENU_ITEM` int(11) DEFAULT NULL,
+  `MENUITEM_MODIFIERGROUP_ID` int(11) DEFAULT NULL,
+  `GR_ORDER` int(11) DEFAULT NULL,
+  `SORT_ORDER` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `MENUITEM_SHIFT`
+--
+
+CREATE TABLE IF NOT EXISTS `MENUITEM_SHIFT` (
+`ID` int(11) NOT NULL,
+  `SHIFT_PRICE` double DEFAULT NULL,
+  `SHIFT_ID` int(11) DEFAULT NULL,
+  `MENUITEM_ID` int(11) DEFAULT NULL,
+  `SHIFT_ORDER` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `MENU_CATEGORY`
+--
+
+CREATE TABLE IF NOT EXISTS `MENU_CATEGORY` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(20) NOT NULL,
+  `VISIBLE` bit(1) DEFAULT NULL,
+  `BEVERAGE` bit(1) DEFAULT NULL,
+  `TRANSLATED_NAME` varchar(40) DEFAULT NULL,
+  `SORT_ORDER` int(11) DEFAULT NULL,
+  `BTN_COLOR` int(11) DEFAULT NULL,
+  `TEXT_COLOR` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `MENU_CATEGORY`
+--
+
+INSERT INTO `MENU_CATEGORY` (`ID`, `NAME`, `VISIBLE`, `BEVERAGE`, `TRANSLATED_NAME`, `SORT_ORDER`, `BTN_COLOR`, `TEXT_COLOR`) VALUES
+(1, 'MAKANAN UTAMA', b'1', b'1', NULL, NULL, NULL, NULL),
+(2, 'MINUMAN UTAMA', b'1', b'1', NULL, NULL, NULL, NULL),
+(3, 'MAKANAN PENUTUP', b'1', b'1', NULL, NULL, NULL, NULL),
+(4, 'MINUMAN PENUTUP', b'1', b'1', NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `MENU_GROUP`
+--
+
+CREATE TABLE IF NOT EXISTS `MENU_GROUP` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(20) NOT NULL,
+  `VISIBLE` bit(1) DEFAULT NULL,
+  `CATEGORY_ID` int(11) DEFAULT NULL,
+  `MENU_CATEGORY_ID` int(11) DEFAULT NULL,
+  `TRANSLATED_NAME` varchar(40) DEFAULT NULL,
+  `SORT_ORDER` int(11) DEFAULT NULL,
+  `BTN_COLOR` int(11) DEFAULT NULL,
+  `TEXT_COLOR` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `MENU_GROUP`
+--
+
+INSERT INTO `MENU_GROUP` (`ID`, `NAME`, `VISIBLE`, `CATEGORY_ID`, `MENU_CATEGORY_ID`, `TRANSLATED_NAME`, `SORT_ORDER`, `BTN_COLOR`, `TEXT_COLOR`) VALUES
+(1, 'Item Makanan Utama', b'1', 1, NULL, NULL, NULL, NULL, NULL),
+(2, 'Item Makanan Penutup', b'1', 3, NULL, NULL, NULL, NULL, NULL),
+(3, 'Item Minuman Utama', b'1', 2, NULL, NULL, NULL, NULL, NULL),
+(4, 'Item Minuman Penutup', b'1', 4, NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `MENU_ITEM`
+--
+
+CREATE TABLE IF NOT EXISTS `MENU_ITEM` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(30) NOT NULL,
+  `PRICE` double NOT NULL,
+  `DISCOUNT_RATE` double DEFAULT NULL,
+  `VISIBLE` bit(1) DEFAULT NULL,
+  `GROUP_ID` int(11) DEFAULT NULL,
+  `TAX_ID` int(11) DEFAULT NULL,
+  `DEFAULT_MODIFIERS` varchar(255) DEFAULT NULL,
+  `TRANSLATED_NAME` varchar(120) DEFAULT NULL,
+  `BARCODE` varchar(120) DEFAULT NULL,
+  `BUY_PRICE` double DEFAULT NULL,
+  `SORT_ORDER` int(11) DEFAULT NULL,
+  `BTN_COLOR` int(11) DEFAULT NULL,
+  `TEXT_COLOR` int(11) DEFAULT NULL,
+  `IMAGE` blob,
+  `SHOW_IMAGE_ONLY` bit(1) DEFAULT NULL,
+  `RECEPIE` int(11) DEFAULT NULL,
+  `VPRINTER_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `MENU_ITEM`
+--
+
+INSERT INTO `MENU_ITEM` (`ID`, `NAME`, `PRICE`, `DISCOUNT_RATE`, `VISIBLE`, `GROUP_ID`, `TAX_ID`, `DEFAULT_MODIFIERS`, `TRANSLATED_NAME`, `BARCODE`, `BUY_PRICE`, `SORT_ORDER`, `BTN_COLOR`, `TEXT_COLOR`, `IMAGE`, `SHOW_IMAGE_ONLY`, `RECEPIE`, `VPRINTER_ID`) VALUES
+(1, 'Ayam Kampus Special', 18000, 0, b'1', 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 'Ager', 2000, 0, b'1', 2, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 'Ayam Kampus Normal', 14000, 0, b'1', 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'cake', 5000, 0, b'1', 2, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 'Jus Duren', 8000, 0, b'1', 3, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 'Es Jengkol', 9000, 0, b'1', 3, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 'Air Putih', 1000, 0, b'1', 4, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 'Teh Tawar', 2500, 0, b'1', 4, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `MENU_MODIFIER`
+--
+
+CREATE TABLE IF NOT EXISTS `MENU_MODIFIER` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(20) DEFAULT NULL,
+  `PRICE` double DEFAULT NULL,
+  `EXTRA_PRICE` double DEFAULT NULL,
+  `ENABLE` bit(1) DEFAULT NULL,
+  `PRINT_TO_KITCHEN` bit(1) DEFAULT NULL,
+  `GROUP_ID` int(11) DEFAULT NULL,
+  `TAX_ID` int(11) DEFAULT NULL,
+  `TRANSLATED_NAME` varchar(120) DEFAULT NULL,
+  `SORT_ORDER` int(11) DEFAULT NULL,
+  `BTN_COLOR` int(11) DEFAULT NULL,
+  `TEXT_COLOR` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `MENU_MODIFIER`
+--
+
+INSERT INTO `MENU_MODIFIER` (`ID`, `NAME`, `PRICE`, `EXTRA_PRICE`, `ENABLE`, `PRINT_TO_KITCHEN`, `GROUP_ID`, `TAX_ID`, `TRANSLATED_NAME`, `SORT_ORDER`, `BTN_COLOR`, `TEXT_COLOR`) VALUES
+(1, 'abc', 100, 10, b'0', b'1', 1, 1, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `MENU_MODIFIER_GROUP`
+--
+
+CREATE TABLE IF NOT EXISTS `MENU_MODIFIER_GROUP` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(60) DEFAULT NULL,
+  `ENABLED` bit(1) DEFAULT NULL,
+  `EXCLUSIVED` bit(1) DEFAULT NULL,
+  `REQUIRED` bit(1) DEFAULT NULL,
+  `TRANSLATED_NAME` varchar(60) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `MENU_MODIFIER_GROUP`
+--
+
+INSERT INTO `MENU_MODIFIER_GROUP` (`ID`, `NAME`, `ENABLED`, `EXCLUSIVED`, `REQUIRED`, `TRANSLATED_NAME`) VALUES
+(1, 'coba', b'0', b'0', b'0', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ORDER_TYPE_PROPERTIES`
+--
+
+CREATE TABLE IF NOT EXISTS `ORDER_TYPE_PROPERTIES` (
+`ID` int(11) NOT NULL,
+  `OTYPE` varchar(16) DEFAULT NULL,
+  `ALIAS` varchar(40) DEFAULT NULL,
+  `BTN_COLOR` int(11) DEFAULT NULL,
+  `TEXT_COLOR` int(11) DEFAULT NULL,
+  `VISIBLE` bit(1) DEFAULT NULL,
+  `ALLOW_DELAY_PAYMENT` bit(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `PACKAGING_UNIT`
+--
+
+CREATE TABLE IF NOT EXISTS `PACKAGING_UNIT` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(30) DEFAULT NULL,
+  `SHORT_NAME` varchar(10) DEFAULT NULL,
+  `FACTOR` double DEFAULT NULL,
+  `BASEUNIT` bit(1) DEFAULT NULL,
+  `DIMENSION` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `PAYOUT_REASONS`
+--
+
+CREATE TABLE IF NOT EXISTS `PAYOUT_REASONS` (
+`ID` int(11) NOT NULL,
+  `REASON` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `PAYOUT_RECEPIENTS`
+--
+
+CREATE TABLE IF NOT EXISTS `PAYOUT_RECEPIENTS` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `PRINTER_CONFIGURATION`
+--
+
+CREATE TABLE IF NOT EXISTS `PRINTER_CONFIGURATION` (
+  `ID` int(11) NOT NULL,
+  `RECEIPT_PRINTER` varchar(255) DEFAULT NULL,
+  `KITCHEN_PRINTER` varchar(255) DEFAULT NULL,
+  `PRWTS` bit(1) DEFAULT NULL,
+  `PRWTP` bit(1) DEFAULT NULL,
+  `PKWTS` bit(1) DEFAULT NULL,
+  `PKWTP` bit(1) DEFAULT NULL,
+  `UNPFT` bit(1) DEFAULT NULL,
+  `UNPFK` bit(1) DEFAULT NULL,
+  `PRINTERPORT` varchar(60) DEFAULT NULL,
+  `PRINTERTYPE` varchar(60) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `PURCHASE_ORDER`
+--
+
+CREATE TABLE IF NOT EXISTS `PURCHASE_ORDER` (
+`ID` int(11) NOT NULL,
+  `ORDER_ID` varchar(30) DEFAULT NULL,
+  `NAME` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `RECEPIE`
+--
+
+CREATE TABLE IF NOT EXISTS `RECEPIE` (
+`ID` int(11) NOT NULL,
+  `MENU_ITEM` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `RECEPIE_ITEM`
+--
+
+CREATE TABLE IF NOT EXISTS `RECEPIE_ITEM` (
+`ID` int(11) NOT NULL,
+  `PERCENTAGE` double DEFAULT NULL,
+  `INVENTORY_DEDUCTABLE` bit(1) DEFAULT NULL,
+  `INVENTORY_ITEM` int(11) DEFAULT NULL,
+  `RECEPIE_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `RESTAURANT`
+--
+
+CREATE TABLE IF NOT EXISTS `RESTAURANT` (
+  `ID` int(11) NOT NULL,
+  `NAME` varchar(40) DEFAULT NULL,
+  `ADDRESS_LINE1` varchar(20) DEFAULT NULL,
+  `ADDRESS_LINE2` varchar(20) DEFAULT NULL,
+  `ADDRESS_LINE3` varchar(20) DEFAULT NULL,
+  `TELEPHONE` varchar(16) DEFAULT NULL,
+  `CAPACITY` int(11) DEFAULT NULL,
+  `TABLES` int(11) DEFAULT NULL,
+  `AUTODRAWERPULLENABLE` bit(1) DEFAULT NULL,
+  `DRAWER_PULL_HOUR` int(11) DEFAULT NULL,
+  `DRAWER_PULL_MIN` int(11) DEFAULT NULL,
+  `CNAME` varchar(20) DEFAULT NULL,
+  `CSYMBOL` varchar(10) DEFAULT NULL,
+  `UNIQUE_ID` int(11) DEFAULT NULL,
+  `ZIP_CODE` varchar(10) DEFAULT NULL,
+  `SC_PERCENTAGE` double DEFAULT NULL,
+  `GRATUITY_PERCENTAGE` double DEFAULT NULL,
+  `TICKET_FOOTER` varchar(60) DEFAULT NULL,
+  `PRICE_INCLUDES_TAX` bit(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `RESTAURANT`
+--
+
+INSERT INTO `RESTAURANT` (`ID`, `NAME`, `ADDRESS_LINE1`, `ADDRESS_LINE2`, `ADDRESS_LINE3`, `TELEPHONE`, `CAPACITY`, `TABLES`, `AUTODRAWERPULLENABLE`, `DRAWER_PULL_HOUR`, `DRAWER_PULL_MIN`, `CNAME`, `CSYMBOL`, `UNIQUE_ID`, `ZIP_CODE`, `SC_PERCENTAGE`, `GRATUITY_PERCENTAGE`, `TICKET_FOOTER`, `PRICE_INCLUDES_TAX`) VALUES
+(1, 'AYAM KAMPUS POS', 'Kemang Pratama', 'Jakarta selatan', '', '021-123456', 100, 25, b'1', 0, 0, 'Rupiah', 'Rp.', 1334697709, NULL, 0, 0, NULL, b'0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `RESTAURANT_TABLE`
+--
+
+CREATE TABLE IF NOT EXISTS `RESTAURANT_TABLE` (
+`ID` int(11) NOT NULL,
+  `CAPACITY` int(11) DEFAULT NULL,
+  `NAME` varchar(60) DEFAULT NULL,
+  `BOOKED` bit(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `SHIFT`
+--
+
+CREATE TABLE IF NOT EXISTS `SHIFT` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(60) NOT NULL,
+  `START_TIME` datetime DEFAULT NULL,
+  `END_TIME` datetime DEFAULT NULL,
+  `SHIFT_LEN` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `SHIFT`
+--
+
+INSERT INTO `SHIFT` (`ID`, `NAME`, `START_TIME`, `END_TIME`, `SHIFT_LEN`) VALUES
+(1, 'General', '1970-01-01 00:00:00', '1970-01-01 23:59:59', 86340000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `SHOP_FLOOR`
+--
+
+CREATE TABLE IF NOT EXISTS `SHOP_FLOOR` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(60) DEFAULT NULL,
+  `OCCUPIED` bit(1) DEFAULT NULL,
+  `IMAGE` mediumblob
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `SHOP_TABLE`
+--
+
+CREATE TABLE IF NOT EXISTS `SHOP_TABLE` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(20) DEFAULT NULL,
+  `DESCRIPTION` varchar(60) DEFAULT NULL,
+  `CAPACITY` int(11) DEFAULT NULL,
+  `TABLE_NUMBER` varchar(255) DEFAULT NULL,
+  `X` int(11) DEFAULT NULL,
+  `Y` int(11) DEFAULT NULL,
+  `OCCUPIED` bit(1) DEFAULT NULL,
+  `BOOKED` bit(1) DEFAULT NULL,
+  `DIRTY` bit(1) DEFAULT NULL,
+  `FLOOR_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `SHOP_TABLE_TYPE`
+--
+
+CREATE TABLE IF NOT EXISTS `SHOP_TABLE_TYPE` (
+`ID` int(11) NOT NULL,
+  `DESCRIPTION` varchar(120) DEFAULT NULL,
+  `TABLE_TYPE` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `SYSTEM`
+--
+
+CREATE TABLE IF NOT EXISTS `SYSTEM` (
+  `ID` int(11) NOT NULL,
+  `DEVICEIP` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `GATEWAY` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `SERVERIP` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `STORAGE` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `MERCHANTNAME` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `MERCHANTTYPE` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `ADDRESS` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `AREA` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `MERCHANTID` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `DEVICEID` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `NAMEUSER` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `EMAIL` varchar(300) CHARACTER SET utf8 DEFAULT NULL,
+  `CELLNUMBER` int(20) DEFAULT NULL,
+  `USERNAME` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `PASSWORD` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `BANNER` varchar(20) DEFAULT NULL,
+  `WIFI` varchar(20) DEFAULT NULL,
+  `ETHERNET` varchar(20) DEFAULT NULL,
+  `CELULLAR1` varchar(20) DEFAULT NULL,
+  `BRAND1` varchar(20) DEFAULT NULL,
+  `CELULLAR2` varchar(20) DEFAULT NULL,
+  `BRAND2` varchar(20) DEFAULT NULL,
+  `BLUETOOTH` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `SYSTEM`
+--
+
+INSERT INTO `SYSTEM` (`ID`, `DEVICEIP`, `GATEWAY`, `SERVERIP`, `STORAGE`, `MERCHANTNAME`, `MERCHANTTYPE`, `ADDRESS`, `AREA`, `MERCHANTID`, `DEVICEID`, `NAMEUSER`, `EMAIL`, `CELLNUMBER`, `USERNAME`, `PASSWORD`, `BANNER`, `WIFI`, `ETHERNET`, `CELULLAR1`, `BRAND1`, `CELULLAR2`, `BRAND2`, `BLUETOOTH`) VALUES
+(1, '1.1.1.1', '1.1.1.2', '1.1.1.3', '5G', 'Restaurant', 'Restaurant', 'Kemang', 'Radio Dalam', 'M12345', 'D12345', 'Andri Hermawan', '', 2189282, 'andri', 'Password ini', '', 'Disable', 'Disable', 'GSM', 'TRI', 'CDMA', 'Huawei', 'Enable');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TAX`
+--
+
+CREATE TABLE IF NOT EXISTS `TAX` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(20) NOT NULL,
+  `RATE` double DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `TAX`
+--
+
+INSERT INTO `TAX` (`ID`, `NAME`, `RATE`) VALUES
+(1, 'US', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TERMINAL`
+--
+
+CREATE TABLE IF NOT EXISTS `TERMINAL` (
+  `ID` int(11) NOT NULL,
+  `NAME` varchar(60) DEFAULT NULL,
+  `OPENING_BALANCE` double DEFAULT NULL,
+  `CURRENT_BALANCE` double DEFAULT NULL,
+  `HAS_CASH_DRAWER` bit(1) DEFAULT NULL,
+  `AUTODRAWERPULLENABLE` bit(1) DEFAULT NULL,
+  `DRAWER_PULL_HOUR` int(11) DEFAULT NULL,
+  `DRAWER_PULL_MIN` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `TERMINAL`
+--
+
+INSERT INTO `TERMINAL` (`ID`, `NAME`, `OPENING_BALANCE`, `CURRENT_BALANCE`, `HAS_CASH_DRAWER`, `AUTODRAWERPULLENABLE`, `DRAWER_PULL_HOUR`, `DRAWER_PULL_MIN`) VALUES
+(0, 'Terminal - 0', 500, 22610, NULL, NULL, NULL, NULL),
+(577, '577', 500, 500, b'1', b'0', 0, 0),
+(1098, '1098', 500, 500, b'1', b'0', 0, 0),
+(1248, '1248', 500, 500, b'1', b'0', 0, 0),
+(2394, '2394', 500, 500, b'1', b'0', 0, 0),
+(3838, 'Terminal - 3838', 500, 500, NULL, NULL, NULL, NULL),
+(6200, '6200', 500, 500, b'1', b'0', 0, 0),
+(8578, '8578', 500, 15340, b'1', b'0', 0, 0),
+(9236, '9236', 500, 500, b'1', b'0', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TICKET`
+--
+
+CREATE TABLE IF NOT EXISTS `TICKET` (
+`ID` int(11) NOT NULL,
+  `CREATE_DATE` datetime DEFAULT NULL,
+  `CLOSING_DATE` datetime DEFAULT NULL,
+  `ACTIVE_DATE` datetime DEFAULT NULL,
+  `CREATION_HOUR` int(11) DEFAULT NULL,
+  `PAID` bit(1) DEFAULT NULL,
+  `VOIDED` bit(1) DEFAULT NULL,
+  `VOID_REASON` varchar(255) DEFAULT NULL,
+  `WASTED` bit(1) DEFAULT NULL,
+  `SETTLED` bit(1) DEFAULT NULL,
+  `DRAWER_RESETTED` bit(1) DEFAULT NULL,
+  `SUB_TOTAL` double DEFAULT NULL,
+  `TOTAL_DISCOUNT` double DEFAULT NULL,
+  `TOTAL_TAX` double DEFAULT NULL,
+  `TOTAL_PRICE` double DEFAULT NULL,
+  `PAID_AMOUNT` double DEFAULT NULL,
+  `DUE_AMOUNT` double DEFAULT NULL,
+  `TABLE_NUMBER` int(11) DEFAULT NULL,
+  `NUMBER_OF_GUESTS` int(11) DEFAULT NULL,
+  `TRANSACTION_TYPE` varchar(20) DEFAULT NULL,
+  `TRANSACTION_CODE` varchar(60) DEFAULT NULL,
+  `BAR_CODE` varchar(60) DEFAULT NULL,
+  `CARD_TYPE` varchar(60) DEFAULT NULL,
+  `CARD_NUMBER` varchar(60) DEFAULT NULL,
+  `IS_TAX_EXEMPT` bit(1) DEFAULT NULL,
+  `IS_RE_OPENED` bit(1) DEFAULT NULL,
+  `SHIFT_ID` int(11) DEFAULT NULL,
+  `OWNER_ID` int(11) DEFAULT NULL,
+  `GRATUITY_ID` int(11) DEFAULT NULL,
+  `VOID_BY_USER` int(11) DEFAULT NULL,
+  `TERMINAL_ID` int(11) DEFAULT NULL,
+  `DELIVEERY_DATE` datetime DEFAULT NULL,
+  `REFUNDED` bit(1) DEFAULT NULL,
+  `ADVANCE_AMOUNT` double DEFAULT NULL,
+  `STATUS` varchar(30) DEFAULT NULL,
+  `SERVICE_CHARGE` double DEFAULT NULL,
+  `DELIVERY_CHARGE` double DEFAULT NULL,
+  `DELIVERY_ADDRESS` varchar(120) DEFAULT NULL,
+  `CUSTOMER_PICKEUP` bit(1) DEFAULT NULL,
+  `DELIVERY_EXTRA_INFO` varchar(255) DEFAULT NULL,
+  `TICKET_TYPE` varchar(20) DEFAULT NULL,
+  `DRIVER_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `TICKET`
+--
+
+INSERT INTO `TICKET` (`ID`, `CREATE_DATE`, `CLOSING_DATE`, `ACTIVE_DATE`, `CREATION_HOUR`, `PAID`, `VOIDED`, `VOID_REASON`, `WASTED`, `SETTLED`, `DRAWER_RESETTED`, `SUB_TOTAL`, `TOTAL_DISCOUNT`, `TOTAL_TAX`, `TOTAL_PRICE`, `PAID_AMOUNT`, `DUE_AMOUNT`, `TABLE_NUMBER`, `NUMBER_OF_GUESTS`, `TRANSACTION_TYPE`, `TRANSACTION_CODE`, `BAR_CODE`, `CARD_TYPE`, `CARD_NUMBER`, `IS_TAX_EXEMPT`, `IS_RE_OPENED`, `SHIFT_ID`, `OWNER_ID`, `GRATUITY_ID`, `VOID_BY_USER`, `TERMINAL_ID`, `DELIVEERY_DATE`, `REFUNDED`, `ADVANCE_AMOUNT`, `STATUS`, `SERVICE_CHARGE`, `DELIVERY_CHARGE`, `DELIVERY_ADDRESS`, `CUSTOMER_PICKEUP`, `DELIVERY_EXTRA_INFO`, `TICKET_TYPE`, `DRIVER_ID`) VALUES
+(1, '2015-07-23 09:31:19', '2015-07-23 09:31:38', '2015-07-23 09:31:19', 9, b'1', b'0', NULL, b'0', b'1', b'1', 6, 0, 0.36000000000000004, 6.36, 6.36, 0, 1, 3, 'CASH', NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, '2015-07-23 16:16:36', '2015-07-23 16:16:48', '2015-07-23 16:16:36', 16, b'1', b'0', NULL, b'0', b'1', b'1', 4, 0, 0.24, 4.24, 4.24, 0, 5, 6, 'CASH', NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, '2015-08-12 13:06:37', '2015-08-18 12:44:20', '2015-08-18 13:06:37', 13, b'1', b'0', NULL, b'0', b'1', b'1', 14000, 0, 840, 14840, 14840, 0, 1, 5, 'CASH', NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, '2015-08-18 10:14:23', '2015-08-18 12:43:56', '2015-08-18 10:14:23', 10, b'1', b'0', NULL, b'0', b'1', b'1', 15000, 0, 900, 15900, 15900, 0, 9, 8, 'CASH', NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, '2015-08-18 12:51:59', '2015-08-18 13:17:13', '2015-08-18 12:51:59', 12, b'0', b'1', 'basi', b'1', b'1', b'1', 31000, 0, 1380, 32380, 0, 32380, 2, 2, NULL, NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, '2015-08-18 13:17:27', '2015-08-18 13:21:09', '2015-08-18 13:17:27', 13, b'1', b'0', 'basi', b'0', b'1', b'1', 18000, 0, 1080, 19080, 19080, 0, 2, 1, 'CASH', NULL, NULL, NULL, NULL, b'0', b'1', 1, 1, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, '2015-08-18 13:18:53', '2015-08-18 13:21:09', '2015-08-18 13:18:53', 13, b'1', b'0', NULL, b'0', b'1', b'1', 28000, 0, 1680, 29680, 29680, 0, 1, 2, 'CASH', NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, '2015-08-18 13:22:32', '2015-08-18 13:49:28', '2015-08-18 13:22:32', 13, b'1', b'0', NULL, b'0', b'1', b'1', 1000, 0, 60, 1060, 1060, 0, 4, 6, 'CASH', NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, '2015-08-18 13:49:43', '2015-08-18 13:52:53', '2015-08-18 13:49:43', 13, b'1', b'0', NULL, b'0', b'1', b'1', 18000, 0, 0, 18000, 18000, 0, 1, 2, 'CASH', NULL, NULL, NULL, NULL, b'1', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10, '2015-08-18 13:53:04', '2015-08-18 14:11:48', '2015-08-18 13:53:04', 13, b'1', b'0', NULL, b'0', b'1', b'1', 1000, 0, 60, 1060, 1060, 0, 5, 2, 'CASH', NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(11, '2015-08-18 14:11:54', '2015-08-18 14:32:10', '2015-08-18 14:11:54', 14, b'1', b'0', NULL, b'0', b'1', b'1', 14000, 0, 840, 14840, 14840, 0, -1, 1, 'CASH', NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(12, '2015-08-18 14:18:54', '2015-08-18 14:23:57', '2015-08-18 14:18:54', 14, b'1', b'0', NULL, b'0', b'1', b'1', 9000, 0, 540, 9540, 9540, 0, 5, 2, 'CASH', NULL, NULL, 'MASTER_CARD', NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(13, '2015-08-18 14:24:09', '2015-08-18 14:35:18', '2015-08-18 14:24:09', 14, b'1', b'0', NULL, b'0', b'1', b'1', 20000, 0, 1200, 21200, 21200, 0, 1, 1, 'CASH', NULL, NULL, 'MASTER_CARD', NULL, b'0', b'0', 1, 1, 1, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(14, '2015-08-18 14:30:21', '2015-08-18 14:31:41', '2015-08-18 14:30:21', 14, b'1', b'0', NULL, b'0', b'1', b'1', 18000, 0, 1080, 19080, 19080, 0, 8, 1, 'CASH', NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(15, '2015-08-18 14:36:23', '2015-08-18 14:38:20', '2015-08-18 14:36:23', 14, b'1', b'0', NULL, b'0', b'1', b'1', 1000, 0, 60, 1060, 1060, 0, 8, 2, 'DEBIT_CARD', NULL, NULL, 'MASTER_CARD', '032323232323', b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(16, '2015-08-18 14:38:37', '2015-08-18 14:39:22', '2015-08-18 14:38:37', 14, b'1', b'0', NULL, b'0', b'1', b'1', 14000, 0, 840, 14840, 14840, 0, 3, 2, 'DEBIT_CARD', NULL, NULL, 'MASTER_CARD', '0', b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(17, '2015-08-18 14:39:37', '2015-08-18 14:40:13', '2015-08-18 14:39:37', 14, b'1', b'0', NULL, b'0', b'1', b'1', 18000, 0, 1080, 19080, 19080, 0, 20, 3, 'DEBIT_CARD', NULL, NULL, 'MASTER_CARD', '0', b'0', b'0', 1, 1, 2, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(18, '2015-08-18 14:40:50', '2015-08-18 14:41:47', '2015-08-18 14:40:50', 14, b'1', b'0', NULL, b'0', b'1', b'1', 14000, 0, 840, 14840, 14840, 0, 7, 5, 'CREDIT_CARD', NULL, NULL, 'MASTER_CARD', '0323232332323', b'0', b'0', 1, 1, 3, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(19, '2015-08-18 14:42:46', '2015-08-18 14:43:01', '2015-08-18 14:42:46', 14, b'1', b'0', NULL, b'0', b'1', b'1', 1000, 0, 60, 1060, 1060, 0, 2, 1, 'CREDIT_CARD', NULL, NULL, 'MASTER_CARD', '0', b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(20, '2015-08-18 14:44:32', '2015-08-18 14:45:02', '2015-08-18 14:44:32', 14, b'1', b'0', NULL, b'0', b'1', b'1', 8000, 0, 480, 8480, 8480, 0, -1, 1, 'CREDIT_CARD', NULL, NULL, 'MASTER_CARD', '1111111111111111111111111', b'0', b'0', 1, 1, 4, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(21, '2015-08-18 15:15:31', '2015-08-18 15:16:46', '2015-08-18 15:15:31', 15, b'1', b'0', NULL, b'0', b'1', b'1', 18000, 0, 1080, 19080, 19080, 0, 4, 2, 'CASH', NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(22, '2015-08-18 15:17:34', '2015-08-18 15:23:16', '2015-08-18 15:17:34', 15, b'1', b'0', NULL, b'0', b'1', b'1', 28000, 0, 1680, 29680, 29680, 0, -1, 1, 'CASH', NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(23, '2015-08-18 15:22:48', '2015-08-18 15:23:01', '2015-08-18 15:22:48', 15, b'1', b'0', NULL, b'0', b'1', b'1', 18000, 0, 1080, 19080, 19080, 0, -1, 1, 'CREDIT_CARD', NULL, NULL, 'MASTER_CARD', '0', b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(24, '2015-08-18 15:23:24', '2015-08-18 15:23:43', '2015-08-18 15:23:24', 15, b'1', b'0', NULL, b'0', b'1', b'1', 2500, 0, 150, 2650, 2650, 0, 8, 2, 'CREDIT_CARD', NULL, NULL, 'MASTER_CARD', '0433333333', b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(25, '2015-08-18 15:29:49', '2015-08-18 15:29:57', '2015-08-18 15:29:49', 15, b'1', b'0', NULL, b'0', b'1', b'1', 14000, 0, 840, 14840, 14840, 0, 5, 5, 'CREDIT_CARD', NULL, NULL, 'MASTER_CARD', '0', b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(26, '2015-08-18 15:30:14', '2015-08-18 15:30:26', '2015-08-18 15:30:14', 15, b'1', b'0', NULL, b'0', b'1', b'1', 18000, 0, 1080, 19080, 19080, 0, 8, 3, 'CREDIT_CARD', NULL, NULL, 'MASTER_CARD', '0', b'0', b'0', 1, 1, 5, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(27, '2015-08-18 15:30:38', '2015-08-18 15:30:56', '2015-08-18 15:30:38', 15, b'1', b'0', NULL, b'0', b'1', b'1', 14000, 0, 840, 14840, 14840, 0, 1, 2, 'CREDIT_CARD', NULL, NULL, 'MASTER_CARD', '0', b'0', b'0', 1, 1, 6, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(28, '2015-08-18 15:31:33', '2015-08-18 15:31:42', '2015-08-18 15:31:33', 15, b'1', b'0', NULL, b'0', b'1', b'1', 1000, 0, 60, 1060, 1060, 0, 8, 5, 'DEBIT_CARD', NULL, NULL, 'MASTER_CARD', '0', b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(29, '2015-08-18 15:32:35', '2015-08-18 16:02:23', '2015-08-18 15:32:35', 15, b'1', b'0', NULL, b'0', b'1', b'0', 2000, 0, 120, 2120, 2120, 0, 7, 1, 'CREDIT_CARD', NULL, NULL, 'MASTER_CARD', '0', b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(30, '2015-08-18 16:06:40', '2015-08-18 16:15:53', '2015-08-18 16:06:40', 16, b'1', b'0', NULL, b'0', b'1', b'0', 14000, 0, 840, 14840, 14840, 0, 7, 2, 'GIFT_CERT', NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(31, '2015-08-18 16:17:38', '2015-08-18 16:17:46', '2015-08-18 16:17:38', 16, b'1', b'0', NULL, b'0', b'1', b'0', 5000, 0, 300, 5300, 5300, 0, 7, 2, 'GIFT_CERT', NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(32, '2015-08-18 16:18:44', '2015-08-18 16:19:41', '2015-08-18 16:18:44', 16, b'1', b'0', NULL, b'0', b'1', b'0', 2000, 0, 120, 2120, 2120, 0, -1, 1, 'GIFT_CERT', NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(33, '2015-08-18 16:21:48', '2015-08-21 13:11:58', '2015-08-21 16:21:48', 16, b'1', b'0', NULL, b'0', b'1', b'0', 14000, 0, 840, 14840, 14840, 0, -1, 1, NULL, NULL, NULL, NULL, NULL, b'0', b'0', 1, 1, NULL, NULL, 8578, '2015-08-18 16:31:48', b'0', 0, NULL, 0, 0, NULL, b'0', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TICKETITEM_MODIFIERGROUP`
+--
+
+CREATE TABLE IF NOT EXISTS `TICKETITEM_MODIFIERGROUP` (
+`ID` int(11) NOT NULL,
+  `GROUP_ID` int(11) DEFAULT NULL,
+  `MIN_QUANTITY` int(11) DEFAULT NULL,
+  `MAX_QUANTITY` int(11) DEFAULT NULL,
+  `parent` int(11) DEFAULT NULL,
+  `TICKETITEM_ID` int(11) DEFAULT NULL,
+  `ITEM_ORDER` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TICKET_COOKING_INSTRUCTION`
+--
+
+CREATE TABLE IF NOT EXISTS `TICKET_COOKING_INSTRUCTION` (
+  `TICKET_ID` int(11) NOT NULL,
+  `description` varchar(60) DEFAULT NULL,
+  `printedToKitchen` bit(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `TICKET_COOKING_INSTRUCTION`
+--
+
+INSERT INTO `TICKET_COOKING_INSTRUCTION` (`TICKET_ID`, `description`, `printedToKitchen`) VALUES
+(5, 'jangan pedas', b'0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TICKET_COUPON_DISCOUNT`
+--
+
+CREATE TABLE IF NOT EXISTS `TICKET_COUPON_DISCOUNT` (
+`ID` int(11) NOT NULL,
+  `COUPON_DISCOUNT_ID` int(11) DEFAULT NULL,
+  `NAME` varchar(30) DEFAULT NULL,
+  `TYPE` int(11) DEFAULT NULL,
+  `VALUE` double DEFAULT NULL,
+  `TICKET_ID` int(11) DEFAULT NULL,
+  `D_ORDER` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TICKET_ITEM`
+--
+
+CREATE TABLE IF NOT EXISTS `TICKET_ITEM` (
+`ID` int(11) NOT NULL,
+  `ITEM_ID` int(11) DEFAULT NULL,
+  `ITEM_COUNT` int(11) DEFAULT NULL,
+  `ITEM_NAME` varchar(30) DEFAULT NULL,
+  `GROUP_NAME` varchar(20) DEFAULT NULL,
+  `CATEGORY_NAME` varchar(20) DEFAULT NULL,
+  `ITEM_PRICE` double DEFAULT NULL,
+  `DISCOUNT_RATE` double DEFAULT NULL,
+  `ITEM_TAX_RATE` double DEFAULT NULL,
+  `SUB_TOTAL` double DEFAULT NULL,
+  `SUB_TOTAL_WITH_MODIFIERS` double DEFAULT NULL,
+  `DISCOUNT` double DEFAULT NULL,
+  `TAX_AMOUNT` double DEFAULT NULL,
+  `TAX_AMOUNT_WITH_MODIFIERS` double DEFAULT NULL,
+  `TOTAL_PRICE` double DEFAULT NULL,
+  `TOTAL_PRICE_WITH_MODIFIERS` double DEFAULT NULL,
+  `BEVERAGE` bit(1) DEFAULT NULL,
+  `PRINT_TO_KITCHEN` bit(1) DEFAULT NULL,
+  `HAS_MODIIERS` bit(1) DEFAULT NULL,
+  `PRINTED_TO_KITCHEN` bit(1) DEFAULT NULL,
+  `TICKET_ID` int(11) DEFAULT NULL,
+  `ITEM_ORDER` int(11) DEFAULT NULL,
+  `SUB_TOTAL_WITHOUT_MODIFIERS` double DEFAULT NULL,
+  `TAX_AMOUNT_WITHOUT_MODIFIERS` double DEFAULT NULL,
+  `TOTAL_PRICE_WITHOUT_MODIFIERS` double DEFAULT NULL,
+  `INVENTORY_HANDLED` bit(1) DEFAULT NULL,
+  `VPRINTER_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `TICKET_ITEM`
+--
+
+INSERT INTO `TICKET_ITEM` (`ID`, `ITEM_ID`, `ITEM_COUNT`, `ITEM_NAME`, `GROUP_NAME`, `CATEGORY_NAME`, `ITEM_PRICE`, `DISCOUNT_RATE`, `ITEM_TAX_RATE`, `SUB_TOTAL`, `SUB_TOTAL_WITH_MODIFIERS`, `DISCOUNT`, `TAX_AMOUNT`, `TAX_AMOUNT_WITH_MODIFIERS`, `TOTAL_PRICE`, `TOTAL_PRICE_WITH_MODIFIERS`, `BEVERAGE`, `PRINT_TO_KITCHEN`, `HAS_MODIIERS`, `PRINTED_TO_KITCHEN`, `TICKET_ID`, `ITEM_ORDER`, `SUB_TOTAL_WITHOUT_MODIFIERS`, `TAX_AMOUNT_WITHOUT_MODIFIERS`, `TOTAL_PRICE_WITHOUT_MODIFIERS`, `INVENTORY_HANDLED`, `VPRINTER_ID`) VALUES
+(1, 1, 2, 'Coke', 'COLD BEVERAGE', 'BEVERAGE', 2, 0, 6, 4, 4, 0, 0.24, 0.24, 0, 0, b'1', b'0', b'0', b'0', 1, 0, NULL, NULL, NULL, NULL, NULL),
+(2, 2, 1, 'Egg', 'FAVOURITE', 'BREAKFAST', 2, 0, 6, 2, 2, 0, 0.12, 0.12, 0, 0, b'1', b'0', b'0', b'0', 1, 1, NULL, NULL, NULL, NULL, NULL),
+(3, 1, 1, 'Coke', 'COLD BEVERAGE', 'BEVERAGE', 2, 0, 6, 2, 2, 0, 0.12, 0.12, 0, 0, b'1', b'0', b'0', b'0', 2, 0, NULL, NULL, NULL, NULL, NULL),
+(4, 2, 1, 'Egg', 'FAVOURITE', 'BREAKFAST', 2, 0, 6, 2, 2, 0, 0.12, 0.12, 0, 0, b'1', b'0', b'0', b'0', 2, 1, NULL, NULL, NULL, NULL, NULL),
+(5, 5, 1, 'Jus Duren', 'Item Minuman Utama', 'MINUMAN UTAMA', 8000, 0, 6, 8000, 8000, 0, 480, 480, 0, 0, b'1', b'0', b'0', b'0', 4, 0, NULL, NULL, NULL, NULL, NULL),
+(6, 4, 1, 'cake', 'Item Makanan Penutup', 'MAKANAN PENUTUP', 5000, 0, 6, 5000, 5000, 0, 300, 300, 0, 0, b'1', b'0', b'0', b'0', 4, 1, NULL, NULL, NULL, NULL, NULL),
+(7, 2, 1, 'Ager', 'Item Makanan Penutup', 'MAKANAN PENUTUP', 2000, 0, 6, 2000, 2000, 0, 120, 120, 0, 0, b'1', b'0', b'0', b'0', 4, 2, NULL, NULL, NULL, NULL, NULL),
+(8, 3, 1, 'Ayam Kampus Normal', 'Item Makanan Utama', 'MAKANAN UTAMA', 14000, 0, 6, 14000, 14000, 0, 840, 840, 0, 0, b'1', b'0', b'0', b'0', 3, 0, NULL, NULL, NULL, NULL, NULL),
+(9, 3, 1, 'Ayam Kampus Normal', 'Item Makanan Utama', 'MAKANAN UTAMA', 14000, 0, 6, 14000, 14000, 0, 840, 840, 0, 0, b'1', b'0', b'0', b'0', 5, 0, NULL, NULL, NULL, NULL, NULL),
+(10, 6, 1, 'Es Jengkol', 'Item Minuman Utama', 'MINUMAN UTAMA', 9000, 0, 6, 9000, 9000, 0, 540, 540, 0, 0, b'1', b'0', b'0', b'0', 5, 1, NULL, NULL, NULL, NULL, NULL),
+(11, 0, 1, 'Es batu', 'MISC', 'MISC', 8000, 0, 0, 8000, 8000, 0, 0, 0, 0, 0, b'0', b'1', b'0', b'0', 5, 2, NULL, NULL, NULL, NULL, NULL),
+(12, 1, 1, 'Ayam Kampus Special', 'Item Makanan Utama', 'MAKANAN UTAMA', 18000, 0, 6, 18000, 18000, 0, 1080, 1080, 0, 0, b'1', b'0', b'0', b'0', 6, 0, NULL, NULL, NULL, NULL, NULL),
+(13, 3, 2, 'Ayam Kampus Normal', 'Item Makanan Utama', 'MAKANAN UTAMA', 14000, 0, 6, 28000, 28000, 0, 1680, 1680, 0, 0, b'1', b'0', b'0', b'0', 7, 0, NULL, NULL, NULL, NULL, NULL),
+(14, 7, 1, 'Air Putih', 'Item Minuman Penutup', 'MINUMAN PENUTUP', 1000, 0, 6, 1000, 1000, 0, 60, 60, 0, 0, b'1', b'0', b'0', b'0', 8, 0, NULL, NULL, NULL, NULL, NULL),
+(15, 1, 1, 'Ayam Kampus Special', 'Item Makanan Utama', 'MAKANAN UTAMA', 18000, 0, 6, 18000, 18000, 0, 1080, 1080, 0, 0, b'1', b'0', b'0', b'0', 9, 0, NULL, NULL, NULL, NULL, NULL),
+(16, 7, 1, 'Air Putih', 'Item Minuman Penutup', 'MINUMAN PENUTUP', 1000, 0, 6, 1000, 1000, 0, 60, 60, 0, 0, b'1', b'0', b'0', b'0', 10, 0, NULL, NULL, NULL, NULL, NULL),
+(17, 3, 1, 'Ayam Kampus Normal', 'Item Makanan Utama', 'MAKANAN UTAMA', 14000, 0, 6, 14000, 14000, 0, 840, 840, 0, 0, b'1', b'0', b'0', b'0', 11, 0, NULL, NULL, NULL, NULL, NULL),
+(18, 6, 1, 'Es Jengkol', 'Item Minuman Utama', 'MINUMAN UTAMA', 9000, 0, 6, 9000, 9000, 0, 540, 540, 0, 0, b'1', b'0', b'0', b'0', 12, 0, NULL, NULL, NULL, NULL, NULL),
+(19, 2, 1, 'Ager', 'Item Makanan Penutup', 'MAKANAN PENUTUP', 2000, 0, 6, 2000, 2000, 0, 120, 120, 0, 0, b'1', b'0', b'0', b'0', 13, 0, NULL, NULL, NULL, NULL, NULL),
+(20, 1, 1, 'Ayam Kampus Special', 'Item Makanan Utama', 'MAKANAN UTAMA', 18000, 0, 6, 18000, 18000, 0, 1080, 1080, 0, 0, b'1', b'0', b'0', b'0', 13, 1, NULL, NULL, NULL, NULL, NULL),
+(21, 1, 1, 'Ayam Kampus Special', 'Item Makanan Utama', 'MAKANAN UTAMA', 18000, 0, 6, 18000, 18000, 0, 1080, 1080, 0, 0, b'1', b'0', b'0', b'0', 14, 0, NULL, NULL, NULL, NULL, NULL),
+(22, 7, 1, 'Air Putih', 'Item Minuman Penutup', 'MINUMAN PENUTUP', 1000, 0, 6, 1000, 1000, 0, 60, 60, 0, 0, b'1', b'0', b'0', b'0', 15, 0, NULL, NULL, NULL, NULL, NULL),
+(23, 3, 1, 'Ayam Kampus Normal', 'Item Makanan Utama', 'MAKANAN UTAMA', 14000, 0, 6, 14000, 14000, 0, 840, 840, 0, 0, b'1', b'0', b'0', b'0', 16, 0, NULL, NULL, NULL, NULL, NULL),
+(24, 1, 1, 'Ayam Kampus Special', 'Item Makanan Utama', 'MAKANAN UTAMA', 18000, 0, 6, 18000, 18000, 0, 1080, 1080, 0, 0, b'1', b'0', b'0', b'0', 17, 0, NULL, NULL, NULL, NULL, NULL),
+(25, 3, 1, 'Ayam Kampus Normal', 'Item Makanan Utama', 'MAKANAN UTAMA', 14000, 0, 6, 14000, 14000, 0, 840, 840, 0, 0, b'1', b'0', b'0', b'0', 18, 0, NULL, NULL, NULL, NULL, NULL),
+(26, 7, 1, 'Air Putih', 'Item Minuman Penutup', 'MINUMAN PENUTUP', 1000, 0, 6, 1000, 1000, 0, 60, 60, 0, 0, b'1', b'0', b'0', b'0', 19, 0, NULL, NULL, NULL, NULL, NULL),
+(27, 5, 1, 'Jus Duren', 'Item Minuman Utama', 'MINUMAN UTAMA', 8000, 0, 6, 8000, 8000, 0, 480, 480, 0, 0, b'1', b'0', b'0', b'0', 20, 0, NULL, NULL, NULL, NULL, NULL),
+(28, 1, 1, 'Ayam Kampus Special', 'Item Makanan Utama', 'MAKANAN UTAMA', 18000, 0, 6, 18000, 18000, 0, 1080, 1080, 0, 0, b'1', b'0', b'0', b'0', 21, 0, NULL, NULL, NULL, NULL, NULL),
+(29, 3, 2, 'Ayam Kampus Normal', 'Item Makanan Utama', 'MAKANAN UTAMA', 14000, 0, 6, 28000, 28000, 0, 1680, 1680, 0, 0, b'1', b'0', b'0', b'0', 22, 0, NULL, NULL, NULL, NULL, NULL),
+(30, 1, 1, 'Ayam Kampus Special', 'Item Makanan Utama', 'MAKANAN UTAMA', 18000, 0, 6, 18000, 18000, 0, 1080, 1080, 0, 0, b'1', b'0', b'0', b'0', 23, 0, NULL, NULL, NULL, NULL, NULL),
+(31, 8, 1, 'Teh Tawar', 'Item Minuman Penutup', 'MINUMAN PENUTUP', 2500, 0, 6, 2500, 2500, 0, 150, 150, 0, 0, b'1', b'0', b'0', b'0', 24, 0, NULL, NULL, NULL, NULL, NULL),
+(32, 3, 1, 'Ayam Kampus Normal', 'Item Makanan Utama', 'MAKANAN UTAMA', 14000, 0, 6, 14000, 14000, 0, 840, 840, 0, 0, b'1', b'0', b'0', b'0', 25, 0, NULL, NULL, NULL, NULL, NULL),
+(33, 1, 1, 'Ayam Kampus Special', 'Item Makanan Utama', 'MAKANAN UTAMA', 18000, 0, 6, 18000, 18000, 0, 1080, 1080, 0, 0, b'1', b'0', b'0', b'0', 26, 0, NULL, NULL, NULL, NULL, NULL),
+(34, 3, 1, 'Ayam Kampus Normal', 'Item Makanan Utama', 'MAKANAN UTAMA', 14000, 0, 6, 14000, 14000, 0, 840, 840, 0, 0, b'1', b'0', b'0', b'0', 27, 0, NULL, NULL, NULL, NULL, NULL),
+(35, 7, 1, 'Air Putih', 'Item Minuman Penutup', 'MINUMAN PENUTUP', 1000, 0, 6, 1000, 1000, 0, 60, 60, 0, 0, b'1', b'0', b'0', b'0', 28, 0, NULL, NULL, NULL, NULL, NULL),
+(36, 2, 1, 'Ager', 'Item Makanan Penutup', 'MAKANAN PENUTUP', 2000, 0, 6, 2000, 2000, 0, 120, 120, 0, 0, b'1', b'0', b'0', b'0', 29, 0, NULL, NULL, NULL, NULL, NULL),
+(37, 3, 1, 'Ayam Kampus Normal', 'Item Makanan Utama', 'MAKANAN UTAMA', 14000, 0, 6, 14000, 14000, 0, 840, 840, 0, 0, b'1', b'0', b'0', b'0', 30, 0, NULL, NULL, NULL, NULL, NULL),
+(38, 4, 1, 'cake', 'Item Makanan Penutup', 'MAKANAN PENUTUP', 5000, 0, 6, 5000, 5000, 0, 300, 300, 0, 0, b'1', b'0', b'0', b'0', 31, 0, NULL, NULL, NULL, NULL, NULL),
+(39, 2, 1, 'Ager', 'Item Makanan Penutup', 'MAKANAN PENUTUP', 2000, 0, 6, 2000, 2000, 0, 120, 120, 0, 0, b'1', b'0', b'0', b'0', 32, 0, NULL, NULL, NULL, NULL, NULL),
+(40, 3, 1, 'Ayam Kampus Normal', 'Item Makanan Utama', 'MAKANAN UTAMA', 14000, 0, 6, 14000, 14000, 0, 840, 840, 14840, 0, b'1', b'0', b'0', b'0', 33, 0, 14000, 840, 14840, b'0', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TICKET_ITEM_COOKING_INSTRUCTION`
+--
+
+CREATE TABLE IF NOT EXISTS `TICKET_ITEM_COOKING_INSTRUCTION` (
+  `TICKET_ITEM_ID` int(11) NOT NULL,
+  `description` varchar(60) DEFAULT NULL,
+  `printedToKitchen` bit(1) DEFAULT NULL,
+  `ITEM_ORDER` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TICKET_ITEM_MODIFIER`
+--
+
+CREATE TABLE IF NOT EXISTS `TICKET_ITEM_MODIFIER` (
+`ID` int(11) NOT NULL,
+  `ITEM_ID` int(11) DEFAULT NULL,
+  `GROUP_ID` int(11) DEFAULT NULL,
+  `ITEM_COUNT` int(11) DEFAULT NULL,
+  `MODIFIER_NAME` varchar(30) DEFAULT NULL,
+  `MODIFIER_PRICE` double DEFAULT NULL,
+  `EXTRA_PRICE` double DEFAULT NULL,
+  `MODIFIER_TAX_RATE` double DEFAULT NULL,
+  `MODIFIER_TYPE` int(11) DEFAULT NULL,
+  `TOTAL_PRICE` double DEFAULT NULL,
+  `PRINT_TO_KITCHEN` bit(1) DEFAULT NULL,
+  `PRINTED_TO_KITCHEN` bit(1) DEFAULT NULL,
+  `ModifierGroup_ID` int(11) DEFAULT NULL,
+  `TICKETITEMMODIFIERGROUP_ID` int(11) DEFAULT NULL,
+  `ITEM_ORDER` int(11) DEFAULT NULL,
+  `SUBTOTAL_PRICE` double DEFAULT NULL,
+  `TAX_AMOUNT` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TICKET_PROPERTIES`
+--
+
+CREATE TABLE IF NOT EXISTS `TICKET_PROPERTIES` (
+  `id` int(11) NOT NULL,
+  `property_value` text,
+  `property_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TICKET_TABLE_NUM`
+--
+
+CREATE TABLE IF NOT EXISTS `TICKET_TABLE_NUM` (
+  `ticket_id` int(11) NOT NULL,
+  `TABLE_ID` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TRANSACTIONS`
+--
+
+CREATE TABLE IF NOT EXISTS `TRANSACTIONS` (
+`ID` int(11) NOT NULL,
+  `PAYMENT_TYPE` varchar(20) NOT NULL,
+  `TRANSACTION_TIME` datetime DEFAULT NULL,
+  `SUB_TOTAL` double DEFAULT NULL,
+  `TOTAL_DISCOUNT` double DEFAULT NULL,
+  `TOTAL_TAX` double DEFAULT NULL,
+  `TOTAL_PRICE` double DEFAULT NULL,
+  `GRATUITY_AMOUNT` double DEFAULT NULL,
+  `DRAWER_RESETTED` bit(1) DEFAULT NULL,
+  `TERMINAL_ID` int(11) DEFAULT NULL,
+  `TICKET_ID` int(11) DEFAULT NULL,
+  `USER_ID` int(11) DEFAULT NULL,
+  `FACE_VALUE` double DEFAULT NULL,
+  `PAID_AMOUNT` double DEFAULT NULL,
+  `CASH_BACK_AMOUNT` double DEFAULT NULL,
+  `CARD_NUMBER` varchar(30) DEFAULT NULL,
+  `CARD_TYPE` varchar(30) DEFAULT NULL,
+  `note` varchar(255) DEFAULT NULL,
+  `REASON_ID` int(11) DEFAULT NULL,
+  `RECEPIENT_ID` int(11) DEFAULT NULL,
+  `AMOUNT` double DEFAULT NULL,
+  `TIPS_AMOUNT` double DEFAULT NULL,
+  `TENDER_AMOUNT` double DEFAULT NULL,
+  `TRANSACTION_TYPE` varchar(20) DEFAULT NULL,
+  `PAYMENT_SUB_TYPE` varchar(40) DEFAULT NULL,
+  `CAPTURED` bit(1) DEFAULT NULL,
+  `AUTHORIZABLE` bit(1) DEFAULT NULL,
+  `CARD_TRACK` text,
+  `CARD_AUTH_CODE` varchar(30) DEFAULT NULL,
+  `CARD_TRANSACTION_ID` varchar(255) DEFAULT NULL,
+  `CARD_MERCHANT_GATEWAY` varchar(60) DEFAULT NULL,
+  `CARD_EXP_MONTH` varchar(16) DEFAULT NULL,
+  `CARD_EXP_YEAR` varchar(4) DEFAULT NULL,
+  `CARD_READER` varchar(20) DEFAULT NULL,
+  `GIFT_CERT_NUMBER` varchar(64) DEFAULT NULL,
+  `GIFT_CERT_FACE_VALUE` double DEFAULT NULL,
+  `GIFT_CERT_PAID_AMOUNT` double DEFAULT NULL,
+  `GIFT_CERT_CASH_BACK_AMOUNT` double DEFAULT NULL,
+  `PAYOUT_REASON_ID` int(11) DEFAULT NULL,
+  `PAYOUT_RECEPIENT_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `TRANSACTIONS`
+--
+
+INSERT INTO `TRANSACTIONS` (`ID`, `PAYMENT_TYPE`, `TRANSACTION_TIME`, `SUB_TOTAL`, `TOTAL_DISCOUNT`, `TOTAL_TAX`, `TOTAL_PRICE`, `GRATUITY_AMOUNT`, `DRAWER_RESETTED`, `TERMINAL_ID`, `TICKET_ID`, `USER_ID`, `FACE_VALUE`, `PAID_AMOUNT`, `CASH_BACK_AMOUNT`, `CARD_NUMBER`, `CARD_TYPE`, `note`, `REASON_ID`, `RECEPIENT_ID`, `AMOUNT`, `TIPS_AMOUNT`, `TENDER_AMOUNT`, `TRANSACTION_TYPE`, `PAYMENT_SUB_TYPE`, `CAPTURED`, `AUTHORIZABLE`, `CARD_TRACK`, `CARD_AUTH_CODE`, `CARD_TRANSACTION_ID`, `CARD_MERCHANT_GATEWAY`, `CARD_EXP_MONTH`, `CARD_EXP_YEAR`, `CARD_READER`, `GIFT_CERT_NUMBER`, `GIFT_CERT_FACE_VALUE`, `GIFT_CERT_PAID_AMOUNT`, `GIFT_CERT_CASH_BACK_AMOUNT`, `PAYOUT_REASON_ID`, `PAYOUT_RECEPIENT_ID`) VALUES
+(1, 'CASH', '2015-07-23 09:31:31', 6, 0, 0.36000000000000004, 6.36, 0, b'1', 0, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 'CASH', '2015-07-23 09:31:38', 6, 0, 0.36000000000000004, 6.36, 0, b'1', 0, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 'CASH', '2015-07-23 16:16:48', 4, 0, 0.24, 4.24, 0, b'1', 0, 2, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'CASH', '2015-08-18 12:43:48', 15000, 0, 900, 15900, 0, b'1', 0, 4, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 'CASH', '2015-08-18 12:43:56', 15000, 0, 900, 15900, 0, b'1', 0, 4, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 'CASH', '2015-08-18 12:44:20', 14000, 0, 840, 14840, 0, b'1', 0, 3, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 'REFUND', '2015-08-18 13:19:25', 18000, 0, 1080, 19080, 0, b'1', 0, 6, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 'CASH', '2015-08-18 13:21:09', 18000, 0, 1080, 19080, 0, b'1', 0, 6, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, 'CASH', '2015-08-18 13:21:09', 28000, 0, 1680, 29680, 0, b'1', 0, 7, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10, 'PAY_OUT', '2015-08-18 13:22:59', 50000, 0, 0, 50000, 0, b'1', 0, NULL, 1, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(11, 'PAY_OUT', '2015-08-18 13:23:13', 50000, 0, 0, 50000, 0, b'1', 0, NULL, 1, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(12, 'CASH', '2015-08-18 13:49:28', 1000, 0, 60, 1060, 0, b'1', 0, 8, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(13, 'CASH', '2015-08-18 13:52:53', 18000, 0, 0, 18000, 0, b'1', 0, 9, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(14, 'GIFT_CERT', '2015-08-18 14:07:56', 1000, 0, 60, 1060, 0, b'1', 0, 10, 1, 50, 1.06, 48.94, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(15, 'GIFT_CERT', '2015-08-18 14:08:21', 1000, 0, 60, 1060, 0, b'1', 0, 10, 1, 50, 1.06, 48.94, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(16, 'GIFT_CERT', '2015-08-18 14:09:05', 1000, 0, 60, 1060, 0, b'1', 0, 10, 1, 50, 1.05788, 48.94212, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(17, 'GIFT_CERT', '2015-08-18 14:09:09', 1000, 0, 60, 1060, 0, b'1', 0, 10, 1, 50, 1.05788, 48.94212, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(18, 'GIFT_CERT', '2015-08-18 14:09:42', 1000, 0, 60, 1060, 0, b'1', 0, 10, 1, 50, 1.5788, 48.4212, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(19, 'CASH', '2015-08-18 14:11:48', 1000, 0, 60, 1060, 0, b'1', 0, 10, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(20, 'GIFT_CERT', '2015-08-18 14:12:40', 14000, 0, 840, 14840, 0, b'1', 0, 11, 1, 50, 14.84, 35.16, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(21, 'CREDIT_CARD', '2015-08-18 14:23:11', 9000, 0, 540, 9540, 0, b'1', 0, 12, 1, NULL, NULL, NULL, '05555555555', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(22, 'CASH', '2015-08-18 14:23:57', 9000, 0, 540, 9540, 0, b'1', 0, 12, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(23, 'CASH', '2015-08-18 14:31:41', 18000, 0, 1080, 19080, 0, b'1', 0, 14, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(24, 'CASH', '2015-08-18 14:32:10', 14000, 0, 840, 14840, 0, b'1', 0, 11, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(25, 'CREDIT_CARD', '2015-08-18 14:33:33', 20000, 0, 1200, 21200, 3, b'1', 0, 13, 1, NULL, NULL, NULL, '0434343434', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(26, 'CASH', '2015-08-18 14:35:18', 20000, 0, 1200, 21200, 3, b'1', 0, 13, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(27, 'DEBIT_CARD', '2015-08-18 14:38:20', 1000, 0, 60, 1060, 0, b'1', 0, 15, 1, NULL, NULL, NULL, '032323232323', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(28, 'DEBIT_CARD', '2015-08-18 14:39:22', 14000, 0, 840, 14840, 0, b'1', 0, 16, 1, NULL, NULL, NULL, '0', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(29, 'DEBIT_CARD', '2015-08-18 14:40:13', 18000, 0, 1080, 19080, 10, b'1', 0, 17, 1, NULL, NULL, NULL, '0', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(30, 'CREDIT_CARD', '2015-08-18 14:41:47', 14000, 0, 840, 14840, 30, b'1', 0, 18, 1, NULL, NULL, NULL, '0323232332323', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(31, 'CREDIT_CARD', '2015-08-18 14:43:01', 1000, 0, 60, 1060, 0, b'1', 0, 19, 1, NULL, NULL, NULL, '0', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(32, 'CREDIT_CARD', '2015-08-18 14:45:02', 8000, 0, 480, 8480, 10, b'1', 0, 20, 1, NULL, NULL, NULL, '1111111111111111111111111', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(33, 'CASH', '2015-08-18 15:16:46', 18000, 0, 1080, 19080, 0, b'1', 0, 21, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(34, 'CREDIT_CARD', '2015-08-18 15:23:01', 18000, 0, 1080, 19080, 0, b'1', 0, 23, 1, NULL, NULL, NULL, '0', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(35, 'CASH', '2015-08-18 15:23:16', 28000, 0, 1680, 29680, 0, b'1', 0, 22, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(36, 'CREDIT_CARD', '2015-08-18 15:23:43', 2500, 0, 150, 2650, 0, b'1', 0, 24, 1, NULL, NULL, NULL, '0433333333', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(37, 'CREDIT_CARD', '2015-08-18 15:29:57', 14000, 0, 840, 14840, 0, b'1', 0, 25, 1, NULL, NULL, NULL, '0', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(38, 'CREDIT_CARD', '2015-08-18 15:30:26', 18000, 0, 1080, 19080, 10, b'1', 0, 26, 1, NULL, NULL, NULL, '0', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(39, 'CREDIT_CARD', '2015-08-18 15:30:56', 14000, 0, 840, 14840, 10, b'1', 0, 27, 1, NULL, NULL, NULL, '0', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(40, 'DEBIT_CARD', '2015-08-18 15:31:42', 1000, 0, 60, 1060, 0, b'1', 0, 28, 1, NULL, NULL, NULL, '0', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(41, 'CREDIT_CARD', '2015-08-18 16:02:23', 2000, 0, 120, 2120, 0, b'0', 0, 29, 1, NULL, NULL, NULL, '0', 'MASTER_CARD', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(42, 'GIFT_CERT', '2015-08-18 16:15:53', 14000, 0, 840, 14840, 0, b'0', 0, 30, 1, 50, 14840, -14790, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(43, 'GIFT_CERT', '2015-08-18 16:17:46', 5000, 0, 300, 5300, 0, b'0', 0, 31, 1, 50, 5300, -5250, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(44, 'GIFT_CERT', '2015-08-18 16:19:41', 2000, 0, 120, 2120, 0, b'0', 0, 32, 1, 50, 2120, -2070, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(45, 'CASH', '2015-08-21 13:11:58', NULL, NULL, NULL, NULL, NULL, b'0', 8578, 33, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 14840, 0, 14840, 'CREDIT', 'CASH', b'1', b'0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `TRANSACTION_PROPERTIES`
+--
+
+CREATE TABLE IF NOT EXISTS `TRANSACTION_PROPERTIES` (
+  `id` int(11) NOT NULL,
+  `property_value` varchar(255) DEFAULT NULL,
+  `property_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `USERS`
+--
+
+CREATE TABLE IF NOT EXISTS `USERS` (
+`AUTO_ID` int(11) NOT NULL,
+  `USER_ID` int(11) DEFAULT NULL,
+  `USER_PASS` varchar(16) NOT NULL,
+  `FIRST_NAME` varchar(30) DEFAULT NULL,
+  `LAST_NAME` varchar(30) DEFAULT NULL,
+  `SSN` varchar(30) NOT NULL,
+  `COST_PER_HOUR` double DEFAULT NULL,
+  `CLOCKED_IN` bit(1) DEFAULT NULL,
+  `LAST_CLOCK_IN_TIME` datetime DEFAULT NULL,
+  `SHIFT_ID` int(11) DEFAULT NULL,
+  `currentTerminal` int(11) DEFAULT NULL,
+  `N_USER_TYPE` int(11) DEFAULT NULL,
+  `PHONE_NO` varchar(20) DEFAULT NULL,
+  `IS_DRIVER` bit(1) DEFAULT NULL,
+  `AVAILABLE_FOR_DELIVERY` bit(1) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `USERS`
+--
+
+INSERT INTO `USERS` (`AUTO_ID`, `USER_ID`, `USER_PASS`, `FIRST_NAME`, `LAST_NAME`, `SSN`, `COST_PER_HOUR`, `CLOCKED_IN`, `LAST_CLOCK_IN_TIME`, `SHIFT_ID`, `currentTerminal`, `N_USER_TYPE`, `PHONE_NO`, `IS_DRIVER`, `AVAILABLE_FOR_DELIVERY`) VALUES
+(1, 123, '123', 'Admin', 'Ayam Kampung', '123', 0, b'1', '2015-08-21 14:01:00', 1, 577, 1, NULL, b'0', b'0'),
+(2, 124, '124', 'Cashier', 'Ayam Kampus', '124', 0, b'1', '2015-08-21 13:01:31', 1, 1248, 2, NULL, b'0', b'0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `USER_PERMISSION`
+--
+
+CREATE TABLE IF NOT EXISTS `USER_PERMISSION` (
+  `NAME` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `USER_PERMISSION`
+--
+
+INSERT INTO `USER_PERMISSION` (`NAME`) VALUES
+('Create New Ticket'),
+('Edit Ticket'),
+('Pay Out'),
+('Perform Administrative Task'),
+('Perform Manager Task'),
+('Reopen Ticket'),
+('Settle Ticket'),
+('Split Ticket'),
+('Take Out'),
+('View All Open Ticket'),
+('View Back Office'),
+('View Communication'),
+('View Explorers'),
+('View Help'),
+('View Reports'),
+('View Security'),
+('View System'),
+('Void Ticket');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `USER_TYPE`
+--
+
+CREATE TABLE IF NOT EXISTS `USER_TYPE` (
+`ID` int(11) NOT NULL,
+  `P_NAME` varchar(60) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `USER_TYPE`
+--
+
+INSERT INTO `USER_TYPE` (`ID`, `P_NAME`) VALUES
+(1, 'Administrator'),
+(2, 'Cashier');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `USER_USER_PERMISSION`
+--
+
+CREATE TABLE IF NOT EXISTS `USER_USER_PERMISSION` (
+  `permissionId` int(11) NOT NULL,
+  `elt` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `USER_USER_PERMISSION`
+--
+
+INSERT INTO `USER_USER_PERMISSION` (`permissionId`, `elt`) VALUES
+(1, 'Create New Ticket'),
+(1, 'Edit Ticket'),
+(1, 'Pay Out'),
+(1, 'Perform Administrative Task'),
+(1, 'Perform Manager Task'),
+(1, 'Reopen Ticket'),
+(1, 'Settle Ticket'),
+(1, 'Split Ticket'),
+(1, 'Take Out'),
+(1, 'View All Open Ticket'),
+(1, 'View Back Office'),
+(1, 'View Communication'),
+(1, 'View Explorers'),
+(1, 'View Help'),
+(1, 'View Reports'),
+(1, 'View Security'),
+(1, 'View System'),
+(1, 'Void Ticket'),
+(2, 'Create New Ticket'),
+(2, 'Edit Ticket'),
+(2, 'Pay Out'),
+(2, 'Reopen Ticket'),
+(2, 'Settle Ticket'),
+(2, 'Split Ticket'),
+(2, 'Take Out'),
+(2, 'View All Open Ticket'),
+(2, 'Void Ticket');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `VIRTUAL_PRINTER`
+--
+
+CREATE TABLE IF NOT EXISTS `VIRTUAL_PRINTER` (
+`ID` int(11) NOT NULL,
+  `NAME` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `voidTickets`
+--
+
+CREATE TABLE IF NOT EXISTS `voidTickets` (
+  `DPREPORT_ID` int(11) NOT NULL,
+  `code` int(11) DEFAULT NULL,
+  `reason` varchar(255) DEFAULT NULL,
+  `hast` varchar(255) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `amount` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `voidTickets`
+--
+
+INSERT INTO `voidTickets` (`DPREPORT_ID`, `code`, `reason`, `hast`, `quantity`, `amount`) VALUES
+(18, 5, 'basi', NULL, 0, 31000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `VOID_REASONS`
+--
+
+CREATE TABLE IF NOT EXISTS `VOID_REASONS` (
+`ID` int(11) NOT NULL,
+  `REASON_TEXT` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `VOID_REASONS`
+--
+
+INSERT INTO `VOID_REASONS` (`ID`, `REASON_TEXT`) VALUES
+(1, 'basi');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ZIP_CODE_VS_DELIVERY_CHARGE`
+--
+
+CREATE TABLE IF NOT EXISTS `ZIP_CODE_VS_DELIVERY_CHARGE` (
+`AUTO_ID` int(11) NOT NULL,
+  `ZIP_CODE` varchar(10) NOT NULL,
+  `DELIVERY_CHARGE` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `ACTION_HISTORY`
+--
+ALTER TABLE `ACTION_HISTORY`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK3F3AF36B3E20AD51` (`USER_ID`);
+
+--
+-- Indexes for table `ATTENDENCE_HISTORY`
+--
+ALTER TABLE `ATTENDENCE_HISTORY`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FKDFE829A7660A5E3` (`SHIFT_ID`), ADD KEY `FKDFE829A2AD2D031` (`TERMINAL_ID`), ADD KEY `FKDFE829A3E20AD51` (`USER_ID`);
+
+--
+-- Indexes for table `CASH_DRAWER_RESET_HISTORY`
+--
+ALTER TABLE `CASH_DRAWER_RESET_HISTORY`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK719418223E20AD51` (`USER_ID`);
+
+--
+-- Indexes for table `COOKING_INSTRUCTION`
+--
+ALTER TABLE `COOKING_INSTRUCTION`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `COUPON_AND_DISCOUNT`
+--
+ALTER TABLE `COUPON_AND_DISCOUNT`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `CUSTOMER`
+--
+ALTER TABLE `CUSTOMER`
+ ADD PRIMARY KEY (`AUTO_ID`);
+
+--
+-- Indexes for table `CUSTOMER_PROPERTIES`
+--
+ALTER TABLE `CUSTOMER_PROPERTIES`
+ ADD PRIMARY KEY (`id`,`property_name`), ADD KEY `FKD43068347BBCCF0` (`id`);
+
+--
+-- Indexes for table `DRAWER_PULL_REPORT`
+--
+ALTER TABLE `DRAWER_PULL_REPORT`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FKAEC362202AD2D031` (`TERMINAL_ID`);
+
+--
+-- Indexes for table `DRAWER_PULL_REPORT_VOIDTICKETS`
+--
+ALTER TABLE `DRAWER_PULL_REPORT_VOIDTICKETS`
+ ADD KEY `FK98CF9B143EF4CD9B` (`DPREPORT_ID`);
+
+--
+-- Indexes for table `GRATUITY`
+--
+ALTER TABLE `GRATUITY`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK34E4E3772AD2D031` (`TERMINAL_ID`), ADD KEY `FK34E4E3771DF2D7F1` (`TICKET_ID`), ADD KEY `FK34E4E377AA075D69` (`OWNER_ID`);
+
+--
+-- Indexes for table `INVENTORY_GROUP`
+--
+ALTER TABLE `INVENTORY_GROUP`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `INVENTORY_ITEM`
+--
+ALTER TABLE `INVENTORY_ITEM`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK7DC968369E60C333` (`ITEM_VENDOR_ID`), ADD KEY `FK7DC968362CD583C1` (`ITEM_GROUP_ID`), ADD KEY `FK7DC968363525E956` (`PUNIT_ID`), ADD KEY `FK7DC9683695E455D3` (`ITEM_LOCATION_ID`);
+
+--
+-- Indexes for table `INVENTORY_LOCATION`
+--
+ALTER TABLE `INVENTORY_LOCATION`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK59073B58C46A9C15` (`WAREHOUSE_ID`);
+
+--
+-- Indexes for table `INVENTORY_META_CODE`
+--
+ALTER TABLE `INVENTORY_META_CODE`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `INVENTORY_TRANSACTION`
+--
+ALTER TABLE `INVENTORY_TRANSACTION`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FKAF48F43BFF3F328A` (`FROM_WAREHOUSE_ID`), ADD KEY `FKAF48F43B5B397C5` (`REFERENCE_ID`), ADD KEY `FKAF48F43B96A3D6BF` (`ITEM_ID`), ADD KEY `FKAF48F43BEDA09759` (`TO_WAREHOUSE_ID`), ADD KEY `FKAF48F43BD152C95F` (`VENDOR_ID`);
+
+--
+-- Indexes for table `INVENTORY_UNIT`
+--
+ALTER TABLE `INVENTORY_UNIT`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `INVENTORY_VENDOR`
+--
+ALTER TABLE `INVENTORY_VENDOR`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `INVENTORY_WAREHOUSE`
+--
+ALTER TABLE `INVENTORY_WAREHOUSE`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `KITCHEN_TICKET`
+--
+ALTER TABLE `KITCHEN_TICKET`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK341CBC279583F02A` (`VPRINTER`);
+
+--
+-- Indexes for table `KITCHEN_TICKET_ITEM`
+--
+ALTER TABLE `KITCHEN_TICKET_ITEM`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK1462F02BCB07FAA3` (`KITHEN_TICKET_ID`);
+
+--
+-- Indexes for table `KIT_TICKET_TABLE_NUM`
+--
+ALTER TABLE `KIT_TICKET_TABLE_NUM`
+ ADD KEY `FK5696584BB73E273E` (`kit_ticket_id`);
+
+--
+-- Indexes for table `MENUITEM_MODIFIERGROUP`
+--
+ALTER TABLE `MENUITEM_MODIFIERGROUP`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK312B355B64931EFC` (`MENU_ITEM`), ADD KEY `FK312B355B6E7B8B68` (`MENUITEM_MODIFIERGROUP_ID`), ADD KEY `FK312B355B40FDA3C9` (`MODIFIER_GROUP`);
+
+--
+-- Indexes for table `MENUITEM_SHIFT`
+--
+ALTER TABLE `MENUITEM_SHIFT`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FKE03C92D57660A5E3` (`SHIFT_ID`), ADD KEY `FKE03C92D533662891` (`MENUITEM_ID`);
+
+--
+-- Indexes for table `MENU_CATEGORY`
+--
+ALTER TABLE `MENU_CATEGORY`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `MENU_GROUP`
+--
+ALTER TABLE `MENU_GROUP`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK4DC1AB7F96FBDD10` (`MENU_CATEGORY_ID`), ADD KEY `FK4DC1AB7F2E347FF0` (`CATEGORY_ID`);
+
+--
+-- Indexes for table `MENU_ITEM`
+--
+ALTER TABLE `MENU_ITEM`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK4CD5A1F35188AA24` (`GROUP_ID`), ADD KEY `FK4CD5A1F3A4802F83` (`TAX_ID`), ADD KEY `FK4CD5A1F37080599C` (`VPRINTER_ID`), ADD KEY `FK4CD5A1F3F3B77C57` (`RECEPIE`);
+
+--
+-- Indexes for table `MENU_MODIFIER`
+--
+ALTER TABLE `MENU_MODIFIER`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK59B6B1B75E0C7B8D` (`GROUP_ID`), ADD KEY `FK59B6B1B7A4802F83` (`TAX_ID`);
+
+--
+-- Indexes for table `MENU_MODIFIER_GROUP`
+--
+ALTER TABLE `MENU_MODIFIER_GROUP`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `ORDER_TYPE_PROPERTIES`
+--
+ALTER TABLE `ORDER_TYPE_PROPERTIES`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `PACKAGING_UNIT`
+--
+ALTER TABLE `PACKAGING_UNIT`
+ ADD PRIMARY KEY (`ID`), ADD UNIQUE KEY `NAME` (`NAME`);
+
+--
+-- Indexes for table `PAYOUT_REASONS`
+--
+ALTER TABLE `PAYOUT_REASONS`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `PAYOUT_RECEPIENTS`
+--
+ALTER TABLE `PAYOUT_RECEPIENTS`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `PRINTER_CONFIGURATION`
+--
+ALTER TABLE `PRINTER_CONFIGURATION`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `PURCHASE_ORDER`
+--
+ALTER TABLE `PURCHASE_ORDER`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `RECEPIE`
+--
+ALTER TABLE `RECEPIE`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK6B4E177764931EFC` (`MENU_ITEM`);
+
+--
+-- Indexes for table `RECEPIE_ITEM`
+--
+ALTER TABLE `RECEPIE_ITEM`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK855626DBCAE89B83` (`RECEPIE_ID`), ADD KEY `FK855626DB1682B10E` (`INVENTORY_ITEM`);
+
+--
+-- Indexes for table `RESTAURANT`
+--
+ALTER TABLE `RESTAURANT`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `RESTAURANT_TABLE`
+--
+ALTER TABLE `RESTAURANT_TABLE`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `SHIFT`
+--
+ALTER TABLE `SHIFT`
+ ADD PRIMARY KEY (`ID`), ADD UNIQUE KEY `NAME` (`NAME`);
+
+--
+-- Indexes for table `SHOP_FLOOR`
+--
+ALTER TABLE `SHOP_FLOOR`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `SHOP_TABLE`
+--
+ALTER TABLE `SHOP_TABLE`
+ ADD PRIMARY KEY (`ID`), ADD UNIQUE KEY `TABLE_NUMBER` (`TABLE_NUMBER`), ADD KEY `FK2458E9258979C3CD` (`FLOOR_ID`);
+
+--
+-- Indexes for table `SHOP_TABLE_TYPE`
+--
+ALTER TABLE `SHOP_TABLE_TYPE`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FKB0564614B7F9D66C` (`TABLE_TYPE`);
+
+--
+-- Indexes for table `SYSTEM`
+--
+ALTER TABLE `SYSTEM`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `TAX`
+--
+ALTER TABLE `TAX`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `TERMINAL`
+--
+ALTER TABLE `TERMINAL`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `TICKET`
+--
+ALTER TABLE `TICKET`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK937B5F0C7660A5E3` (`SHIFT_ID`), ADD KEY `FK937B5F0C2AD2D031` (`TERMINAL_ID`), ADD KEY `FK937B5F0CC188EA51` (`GRATUITY_ID`), ADD KEY `FK937B5F0C1F6A9A4A` (`VOID_BY_USER`), ADD KEY `FK937B5F0CAA075D69` (`OWNER_ID`), ADD KEY `FK937B5F0CF575C7D4` (`DRIVER_ID`);
+
+--
+-- Indexes for table `TICKETITEM_MODIFIERGROUP`
+--
+ALTER TABLE `TICKETITEM_MODIFIERGROUP`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK21D455C8DC1B1BB1` (`TICKETITEM_ID`), ADD KEY `FK21D455C8A73C1B20` (`parent`);
+
+--
+-- Indexes for table `TICKET_COOKING_INSTRUCTION`
+--
+ALTER TABLE `TICKET_COOKING_INSTRUCTION`
+ ADD KEY `FKD2C835761DF2D7F1` (`TICKET_ID`);
+
+--
+-- Indexes for table `TICKET_COUPON_DISCOUNT`
+--
+ALTER TABLE `TICKET_COUPON_DISCOUNT`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK3A1F32071DF2D7F1` (`TICKET_ID`);
+
+--
+-- Indexes for table `TICKET_ITEM`
+--
+ALTER TABLE `TICKET_ITEM`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK979F54661DF2D7F1` (`TICKET_ID`), ADD KEY `FK979F54667080599C` (`VPRINTER_ID`);
+
+--
+-- Indexes for table `TICKET_ITEM_COOKING_INSTRUCTION`
+--
+ALTER TABLE `TICKET_ITEM_COOKING_INSTRUCTION`
+ ADD PRIMARY KEY (`TICKET_ITEM_ID`,`ITEM_ORDER`), ADD KEY `FK3825F9D0DEC6120A` (`TICKET_ITEM_ID`);
+
+--
+-- Indexes for table `TICKET_ITEM_MODIFIER`
+--
+ALTER TABLE `TICKET_ITEM_MODIFIER`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FK8FD6290C04D31C4` (`ModifierGroup_ID`), ADD KEY `FK8FD6290267493E3` (`TICKETITEMMODIFIERGROUP_ID`);
+
+--
+-- Indexes for table `TICKET_PROPERTIES`
+--
+ALTER TABLE `TICKET_PROPERTIES`
+ ADD PRIMARY KEY (`id`,`property_name`), ADD KEY `FK70ECD046223049DE` (`id`);
+
+--
+-- Indexes for table `TICKET_TABLE_NUM`
+--
+ALTER TABLE `TICKET_TABLE_NUM`
+ ADD KEY `FK65AF15E21DF2D7F1` (`ticket_id`);
+
+--
+-- Indexes for table `TRANSACTIONS`
+--
+ALTER TABLE `TRANSACTIONS`
+ ADD PRIMARY KEY (`ID`), ADD KEY `FKFE98715570BE7CF7` (`REASON_ID`), ADD KEY `FKFE9871552AD2D031` (`TERMINAL_ID`), ADD KEY `FKFE9871551DF2D7F1` (`TICKET_ID`), ADD KEY `FKFE9871553E20AD51` (`USER_ID`), ADD KEY `FKFE987155B00959BD` (`RECEPIENT_ID`), ADD KEY `FKFE987155FC697D9E` (`PAYOUT_REASON_ID`), ADD KEY `FKFE987155CA43B6` (`PAYOUT_RECEPIENT_ID`);
+
+--
+-- Indexes for table `TRANSACTION_PROPERTIES`
+--
+ALTER TABLE `TRANSACTION_PROPERTIES`
+ ADD PRIMARY KEY (`id`,`property_name`), ADD KEY `FKE3DE65548E8203BC` (`id`);
+
+--
+-- Indexes for table `USERS`
+--
+ALTER TABLE `USERS`
+ ADD PRIMARY KEY (`AUTO_ID`), ADD KEY `FK4D495E87660A5E3` (`SHIFT_ID`), ADD KEY `FK4D495E8D9409968` (`currentTerminal`), ADD KEY `FK4D495E8897B1E39` (`N_USER_TYPE`);
+
+--
+-- Indexes for table `USER_PERMISSION`
+--
+ALTER TABLE `USER_PERMISSION`
+ ADD PRIMARY KEY (`NAME`);
+
+--
+-- Indexes for table `USER_TYPE`
+--
+ALTER TABLE `USER_TYPE`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `USER_USER_PERMISSION`
+--
+ALTER TABLE `USER_USER_PERMISSION`
+ ADD PRIMARY KEY (`permissionId`,`elt`), ADD KEY `FK2DBEAA4F283ECC6` (`permissionId`), ADD KEY `FK2DBEAA4F8F23F5E` (`elt`);
+
+--
+-- Indexes for table `VIRTUAL_PRINTER`
+--
+ALTER TABLE `VIRTUAL_PRINTER`
+ ADD PRIMARY KEY (`ID`), ADD UNIQUE KEY `NAME` (`NAME`);
+
+--
+-- Indexes for table `voidTickets`
+--
+ALTER TABLE `voidTickets`
+ ADD KEY `FK5A70EB33EF4CD9B` (`DPREPORT_ID`);
+
+--
+-- Indexes for table `VOID_REASONS`
+--
+ALTER TABLE `VOID_REASONS`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `ZIP_CODE_VS_DELIVERY_CHARGE`
+--
+ALTER TABLE `ZIP_CODE_VS_DELIVERY_CHARGE`
+ ADD PRIMARY KEY (`AUTO_ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `ACTION_HISTORY`
+--
+ALTER TABLE `ACTION_HISTORY`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=88;
+--
+-- AUTO_INCREMENT for table `ATTENDENCE_HISTORY`
+--
+ALTER TABLE `ATTENDENCE_HISTORY`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
+--
+-- AUTO_INCREMENT for table `CASH_DRAWER_RESET_HISTORY`
+--
+ALTER TABLE `CASH_DRAWER_RESET_HISTORY`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+--
+-- AUTO_INCREMENT for table `COOKING_INSTRUCTION`
+--
+ALTER TABLE `COOKING_INSTRUCTION`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `COUPON_AND_DISCOUNT`
+--
+ALTER TABLE `COUPON_AND_DISCOUNT`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `CUSTOMER`
+--
+ALTER TABLE `CUSTOMER`
+MODIFY `AUTO_ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `DRAWER_PULL_REPORT`
+--
+ALTER TABLE `DRAWER_PULL_REPORT`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+--
+-- AUTO_INCREMENT for table `GRATUITY`
+--
+ALTER TABLE `GRATUITY`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `INVENTORY_GROUP`
+--
+ALTER TABLE `INVENTORY_GROUP`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `INVENTORY_ITEM`
+--
+ALTER TABLE `INVENTORY_ITEM`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `INVENTORY_LOCATION`
+--
+ALTER TABLE `INVENTORY_LOCATION`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `INVENTORY_META_CODE`
+--
+ALTER TABLE `INVENTORY_META_CODE`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `INVENTORY_TRANSACTION`
+--
+ALTER TABLE `INVENTORY_TRANSACTION`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `INVENTORY_UNIT`
+--
+ALTER TABLE `INVENTORY_UNIT`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `INVENTORY_VENDOR`
+--
+ALTER TABLE `INVENTORY_VENDOR`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `INVENTORY_WAREHOUSE`
+--
+ALTER TABLE `INVENTORY_WAREHOUSE`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `KITCHEN_TICKET`
+--
+ALTER TABLE `KITCHEN_TICKET`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `KITCHEN_TICKET_ITEM`
+--
+ALTER TABLE `KITCHEN_TICKET_ITEM`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `MENUITEM_MODIFIERGROUP`
+--
+ALTER TABLE `MENUITEM_MODIFIERGROUP`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `MENUITEM_SHIFT`
+--
+ALTER TABLE `MENUITEM_SHIFT`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `MENU_CATEGORY`
+--
+ALTER TABLE `MENU_CATEGORY`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `MENU_GROUP`
+--
+ALTER TABLE `MENU_GROUP`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `MENU_ITEM`
+--
+ALTER TABLE `MENU_ITEM`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `MENU_MODIFIER`
+--
+ALTER TABLE `MENU_MODIFIER`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `MENU_MODIFIER_GROUP`
+--
+ALTER TABLE `MENU_MODIFIER_GROUP`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `ORDER_TYPE_PROPERTIES`
+--
+ALTER TABLE `ORDER_TYPE_PROPERTIES`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `PACKAGING_UNIT`
+--
+ALTER TABLE `PACKAGING_UNIT`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `PAYOUT_REASONS`
+--
+ALTER TABLE `PAYOUT_REASONS`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `PAYOUT_RECEPIENTS`
+--
+ALTER TABLE `PAYOUT_RECEPIENTS`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `PURCHASE_ORDER`
+--
+ALTER TABLE `PURCHASE_ORDER`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `RECEPIE`
+--
+ALTER TABLE `RECEPIE`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `RECEPIE_ITEM`
+--
+ALTER TABLE `RECEPIE_ITEM`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `RESTAURANT_TABLE`
+--
+ALTER TABLE `RESTAURANT_TABLE`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `SHIFT`
+--
+ALTER TABLE `SHIFT`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `SHOP_FLOOR`
+--
+ALTER TABLE `SHOP_FLOOR`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `SHOP_TABLE`
+--
+ALTER TABLE `SHOP_TABLE`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `SHOP_TABLE_TYPE`
+--
+ALTER TABLE `SHOP_TABLE_TYPE`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `TAX`
+--
+ALTER TABLE `TAX`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `TICKET`
+--
+ALTER TABLE `TICKET`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=34;
+--
+-- AUTO_INCREMENT for table `TICKETITEM_MODIFIERGROUP`
+--
+ALTER TABLE `TICKETITEM_MODIFIERGROUP`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `TICKET_COUPON_DISCOUNT`
+--
+ALTER TABLE `TICKET_COUPON_DISCOUNT`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `TICKET_ITEM`
+--
+ALTER TABLE `TICKET_ITEM`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
+--
+-- AUTO_INCREMENT for table `TICKET_ITEM_MODIFIER`
+--
+ALTER TABLE `TICKET_ITEM_MODIFIER`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `TRANSACTIONS`
+--
+ALTER TABLE `TRANSACTIONS`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
+--
+-- AUTO_INCREMENT for table `USERS`
+--
+ALTER TABLE `USERS`
+MODIFY `AUTO_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `USER_TYPE`
+--
+ALTER TABLE `USER_TYPE`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `VIRTUAL_PRINTER`
+--
+ALTER TABLE `VIRTUAL_PRINTER`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `VOID_REASONS`
+--
+ALTER TABLE `VOID_REASONS`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `ZIP_CODE_VS_DELIVERY_CHARGE`
+--
+ALTER TABLE `ZIP_CODE_VS_DELIVERY_CHARGE`
+MODIFY `AUTO_ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `CUSTOMER_PROPERTIES`
+--
+ALTER TABLE `CUSTOMER_PROPERTIES`
+ADD CONSTRAINT `FKD43068347BBCCF0` FOREIGN KEY (`id`) REFERENCES `CUSTOMER` (`AUTO_ID`);
+
+--
+-- Constraints for table `DRAWER_PULL_REPORT_VOIDTICKETS`
+--
+ALTER TABLE `DRAWER_PULL_REPORT_VOIDTICKETS`
+ADD CONSTRAINT `FK98CF9B143EF4CD9B` FOREIGN KEY (`DPREPORT_ID`) REFERENCES `DRAWER_PULL_REPORT` (`ID`);
+
+--
+-- Constraints for table `INVENTORY_ITEM`
+--
+ALTER TABLE `INVENTORY_ITEM`
+ADD CONSTRAINT `FK7DC968362CD583C1` FOREIGN KEY (`ITEM_GROUP_ID`) REFERENCES `INVENTORY_GROUP` (`ID`),
+ADD CONSTRAINT `FK7DC968363525E956` FOREIGN KEY (`PUNIT_ID`) REFERENCES `PACKAGING_UNIT` (`ID`),
+ADD CONSTRAINT `FK7DC9683695E455D3` FOREIGN KEY (`ITEM_LOCATION_ID`) REFERENCES `INVENTORY_LOCATION` (`ID`),
+ADD CONSTRAINT `FK7DC968369E60C333` FOREIGN KEY (`ITEM_VENDOR_ID`) REFERENCES `INVENTORY_VENDOR` (`ID`);
+
+--
+-- Constraints for table `INVENTORY_LOCATION`
+--
+ALTER TABLE `INVENTORY_LOCATION`
+ADD CONSTRAINT `FK59073B58C46A9C15` FOREIGN KEY (`WAREHOUSE_ID`) REFERENCES `INVENTORY_WAREHOUSE` (`ID`);
+
+--
+-- Constraints for table `INVENTORY_TRANSACTION`
+--
+ALTER TABLE `INVENTORY_TRANSACTION`
+ADD CONSTRAINT `FKAF48F43B5B397C5` FOREIGN KEY (`REFERENCE_ID`) REFERENCES `PURCHASE_ORDER` (`ID`),
+ADD CONSTRAINT `FKAF48F43B96A3D6BF` FOREIGN KEY (`ITEM_ID`) REFERENCES `INVENTORY_ITEM` (`ID`),
+ADD CONSTRAINT `FKAF48F43BD152C95F` FOREIGN KEY (`VENDOR_ID`) REFERENCES `INVENTORY_VENDOR` (`ID`),
+ADD CONSTRAINT `FKAF48F43BEDA09759` FOREIGN KEY (`TO_WAREHOUSE_ID`) REFERENCES `INVENTORY_WAREHOUSE` (`ID`),
+ADD CONSTRAINT `FKAF48F43BFF3F328A` FOREIGN KEY (`FROM_WAREHOUSE_ID`) REFERENCES `INVENTORY_WAREHOUSE` (`ID`);
+
+--
+-- Constraints for table `KITCHEN_TICKET`
+--
+ALTER TABLE `KITCHEN_TICKET`
+ADD CONSTRAINT `FK341CBC279583F02A` FOREIGN KEY (`VPRINTER`) REFERENCES `VIRTUAL_PRINTER` (`ID`);
+
+--
+-- Constraints for table `KITCHEN_TICKET_ITEM`
+--
+ALTER TABLE `KITCHEN_TICKET_ITEM`
+ADD CONSTRAINT `FK1462F02BCB07FAA3` FOREIGN KEY (`KITHEN_TICKET_ID`) REFERENCES `KITCHEN_TICKET` (`ID`);
+
+--
+-- Constraints for table `KIT_TICKET_TABLE_NUM`
+--
+ALTER TABLE `KIT_TICKET_TABLE_NUM`
+ADD CONSTRAINT `FK5696584BB73E273E` FOREIGN KEY (`kit_ticket_id`) REFERENCES `KITCHEN_TICKET` (`ID`);
+
+--
+-- Constraints for table `MENU_ITEM`
+--
+ALTER TABLE `MENU_ITEM`
+ADD CONSTRAINT `FK4CD5A1F37080599C` FOREIGN KEY (`VPRINTER_ID`) REFERENCES `VIRTUAL_PRINTER` (`ID`),
+ADD CONSTRAINT `FK4CD5A1F3F3B77C57` FOREIGN KEY (`RECEPIE`) REFERENCES `RECEPIE` (`ID`);
+
+--
+-- Constraints for table `RECEPIE`
+--
+ALTER TABLE `RECEPIE`
+ADD CONSTRAINT `FK6B4E177764931EFC` FOREIGN KEY (`MENU_ITEM`) REFERENCES `MENU_ITEM` (`ID`);
+
+--
+-- Constraints for table `RECEPIE_ITEM`
+--
+ALTER TABLE `RECEPIE_ITEM`
+ADD CONSTRAINT `FK855626DB1682B10E` FOREIGN KEY (`INVENTORY_ITEM`) REFERENCES `INVENTORY_ITEM` (`ID`),
+ADD CONSTRAINT `FK855626DBCAE89B83` FOREIGN KEY (`RECEPIE_ID`) REFERENCES `RECEPIE` (`ID`);
+
+--
+-- Constraints for table `SHOP_TABLE`
+--
+ALTER TABLE `SHOP_TABLE`
+ADD CONSTRAINT `FK2458E9258979C3CD` FOREIGN KEY (`FLOOR_ID`) REFERENCES `SHOP_FLOOR` (`ID`);
+
+--
+-- Constraints for table `SHOP_TABLE_TYPE`
+--
+ALTER TABLE `SHOP_TABLE_TYPE`
+ADD CONSTRAINT `FKB0564614B7F9D66C` FOREIGN KEY (`TABLE_TYPE`) REFERENCES `SHOP_TABLE` (`ID`);
+
+--
+-- Constraints for table `TICKET`
+--
+ALTER TABLE `TICKET`
+ADD CONSTRAINT `FK937B5F0CF575C7D4` FOREIGN KEY (`DRIVER_ID`) REFERENCES `USERS` (`AUTO_ID`);
+
+--
+-- Constraints for table `TICKET_ITEM`
+--
+ALTER TABLE `TICKET_ITEM`
+ADD CONSTRAINT `FK979F54667080599C` FOREIGN KEY (`VPRINTER_ID`) REFERENCES `VIRTUAL_PRINTER` (`ID`);
+
+--
+-- Constraints for table `TICKET_ITEM_COOKING_INSTRUCTION`
+--
+ALTER TABLE `TICKET_ITEM_COOKING_INSTRUCTION`
+ADD CONSTRAINT `FK3825F9D0DEC6120A` FOREIGN KEY (`TICKET_ITEM_ID`) REFERENCES `TICKET_ITEM` (`ID`);
+
+--
+-- Constraints for table `TICKET_PROPERTIES`
+--
+ALTER TABLE `TICKET_PROPERTIES`
+ADD CONSTRAINT `FK70ECD046223049DE` FOREIGN KEY (`id`) REFERENCES `TICKET` (`ID`);
+
+--
+-- Constraints for table `TICKET_TABLE_NUM`
+--
+ALTER TABLE `TICKET_TABLE_NUM`
+ADD CONSTRAINT `FK65AF15E21DF2D7F1` FOREIGN KEY (`ticket_id`) REFERENCES `TICKET` (`ID`);
+
+--
+-- Constraints for table `TRANSACTIONS`
+--
+ALTER TABLE `TRANSACTIONS`
+ADD CONSTRAINT `FKFE987155CA43B6` FOREIGN KEY (`PAYOUT_RECEPIENT_ID`) REFERENCES `PAYOUT_RECEPIENTS` (`ID`),
+ADD CONSTRAINT `FKFE987155FC697D9E` FOREIGN KEY (`PAYOUT_REASON_ID`) REFERENCES `PAYOUT_REASONS` (`ID`);
+
+--
+-- Constraints for table `TRANSACTION_PROPERTIES`
+--
+ALTER TABLE `TRANSACTION_PROPERTIES`
+ADD CONSTRAINT `FKE3DE65548E8203BC` FOREIGN KEY (`id`) REFERENCES `TRANSACTIONS` (`ID`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
